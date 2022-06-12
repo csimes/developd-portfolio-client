@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { Table, TableHead } from "@mui/material";
 type ProjectDisplayProps = {
   results: [];
 };
@@ -18,25 +18,37 @@ class ProjectDisplay extends Component<
   projectMapper = () => {
     return this.props.results.map((project: any, index) => {
       return (
-        <tr key={index}>
-          <th>{project.projectName}</th>
-          <td>{project.hours}</td>
-          {/* <td>{timesheet.timeType}</td>
-          <td>{timesheet.date}</td>
-          <td>
+        <Table key={index}>
+          <tr>
+            <TableHead>Project Name</TableHead>
+            <TableHead>Project Summary</TableHead>
+          </tr>
+          <tr>
+            <td>{project.projectName}</td>
+            <td>{project.projectSummary}</td>
+            <td>{project.imageUrl}</td>
+            <td>{project.githubUrl}</td>
+            <td>{project.projectUrl}</td>
+            {project.inProgress === true ? (
+              <td>Done</td>
+            ) : (
+              <td>Still working</td>
+            )}
+            {/* <td>
             <Button
               onClick={() => {
-                this.props.editTimesheet(timesheet);
+                this.props.editProject(project);
                 this.props.updateOn();
               }}
             >
               Update
             </Button>
-            <Button onClick={() => this.deleteTimesheet(timesheet)}>
+            <Button onClick={() => this.deleteProject(project)}>
               Delete
             </Button>
           </td> */}
-        </tr>
+          </tr>
+        </Table>
       );
     });
   };
