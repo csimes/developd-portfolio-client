@@ -1,5 +1,17 @@
 import React, { Component } from "react";
-import { Table, TableHead } from "@mui/material";
+import {
+  Container,
+  Card,
+  CardHeader,
+  CardMedia,
+  CardContent,
+  CardActions,
+  Typography,
+  Button,
+  Link,
+} from "@mui/material";
+// import github from "../../assets/github-circle.svg";
+
 type ProjectDisplayProps = {
   results: [];
 };
@@ -18,37 +30,36 @@ class ProjectDisplay extends Component<
   projectMapper = () => {
     return this.props.results.map((project: any, index) => {
       return (
-        <Table key={index}>
-          <tr>
-            <TableHead>Project Name</TableHead>
-            <TableHead>Project Summary</TableHead>
-          </tr>
-          <tr>
-            <td>{project.projectName}</td>
-            <td>{project.projectSummary}</td>
-            <td>{project.imageUrl}</td>
-            <td>{project.githubUrl}</td>
-            <td>{project.projectUrl}</td>
+        <Container>
+          <Card key={index} sx={{ maxWidth: 400 }}>
+            <CardHeader title={project.projectName} />
+            <CardMedia
+              component="img"
+              height="194"
+              image={project.imageUrl}
+              alt={project.name}
+            />
+            <CardContent>
+              <Typography variant="body2" color="text.secondary">
+                {project.projectSummary}
+              </Typography>
+            </CardContent>
+            {/* 
             {project.inProgress === true ? (
-              <td>Done</td>
+              <TableCell>Done</TableCell>
             ) : (
-              <td>Still working</td>
-            )}
-            {/* <td>
-            <Button
-              onClick={() => {
-                this.props.editProject(project);
-                this.props.updateOn();
-              }}
-            >
-              Update
-            </Button>
-            <Button onClick={() => this.deleteProject(project)}>
-              Delete
-            </Button>
-          </td> */}
-          </tr>
-        </Table>
+              <TableCell>Still working</TableCell>
+            )} */}
+            <CardActions>
+              <Button variant="outlined" href={project.githubUrl}>
+                Github Repository
+              </Button>
+              <Button variant="outlined" href={project.projectUrl}>
+                Deployed Project
+              </Button>
+            </CardActions>
+          </Card>
+        </Container>
       );
     });
   };
