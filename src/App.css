@@ -1,3 +1,107 @@
-.App {
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #e79d63;
+}
+
+.hero {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(231, 157, 99, 0.99),
+      rgba(128, 126, 113, 0.73)
+    ),
+    url("./assets/header-img.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #eae7d4;
+}
+
+h1 {
+  font-weight: 400;
+  margin: 0.5rem;
+}
+
+.projects {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.project-card {
+  margin: 10px;
+}
+
+.name {
+  font-weight: 700;
+  color: #47463b;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+}
+
+.logo {
+  margin: 5% auto;
+  width: 30vw;
+}
+
+.socials-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.social {
+  height: 2rem;
+  margin: 1.5rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 24px;
+}
+
+label,
+input {
+  margin: 0.5rem;
+}
+
+input,
+button {
+  font-family: "Montserrat", sans-serif;
+  border: 2px solid black;
+  border-radius: 50px;
+}
+
+input {
+  width: 50%;
+  height: 30px;
+  padding: 5px;
+}
+
+button {
+  font-weight: 700;
+  background-color: #e79d63;
+  color: #47463b;
+  padding: 1rem;
+}
+
+button:hover {
+  color: #eae7d4;
 }

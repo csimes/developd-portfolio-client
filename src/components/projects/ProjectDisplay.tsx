@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import {
-  Container,
   Card,
   CardHeader,
   CardMedia,
@@ -8,9 +7,10 @@ import {
   CardActions,
   Typography,
   Button,
-  Link,
+  Box,
+  Grid,
 } from "@mui/material";
-// import github from "../../assets/github-circle.svg";
+// const github = require("../../assets/email-circle.svg") as string;
 
 type ProjectDisplayProps = {
   results: [];
@@ -30,8 +30,8 @@ class ProjectDisplay extends Component<
   projectMapper = () => {
     return this.props.results.map((project: any, index) => {
       return (
-        <Container>
-          <Card key={index} sx={{ maxWidth: 400 }}>
+        <Grid item>
+          <Card className="project-card" key={index} sx={{ maxWidth: 400 }}>
             <CardHeader title={project.projectName} />
             <CardMedia
               component="img"
@@ -40,18 +40,20 @@ class ProjectDisplay extends Component<
               alt={project.name}
             />
             <CardContent>
-              <Typography variant="body2" color="text.secondary">
-                {project.projectSummary}
+              <Typography variant="body1">{project.projectSummary}</Typography>
+            </CardContent>
+            <CardContent>
+              <Typography variant="body2">
+                Status: This project is
+                {project.inProgress === true
+                  ? " complete."
+                  : " a work in progress."}
               </Typography>
             </CardContent>
-            {/* 
-            {project.inProgress === true ? (
-              <TableCell>Done</TableCell>
-            ) : (
-              <TableCell>Still working</TableCell>
-            )} */}
+
             <CardActions>
               <Button variant="outlined" href={project.githubUrl}>
+                {/* {github} */}
                 Github Repository
               </Button>
               <Button variant="outlined" href={project.projectUrl}>
@@ -59,13 +61,19 @@ class ProjectDisplay extends Component<
               </Button>
             </CardActions>
           </Card>
-        </Container>
+        </Grid>
       );
     });
   };
 
   render() {
-    return <div>{this.projectMapper()}</div>;
+    return (
+      // <Box>
+      <Grid className="projects" container>
+        {this.projectMapper()}
+      </Grid>
+      // </Box>
+    );
   }
 }
 
