@@ -7,7 +7,6 @@ import {
   CardActions,
   Typography,
   Button,
-  Box,
   Grid,
 } from "@mui/material";
 // const github = require("../../assets/email-circle.svg") as string;
