@@ -14,6 +14,11 @@ body {
   background-color: #e79d63;
 }
 
+/** Navigation **/
+.nav-logo {
+  max-width: 20px;
+}
+
 .hero {
   background-image: linear-gradient(
       to bottom,
@@ -56,7 +61,7 @@ h1 {
 
 .logo {
   margin: 5% auto;
-  width: 30vw;
+  width: 25%;
 }
 
 .socials-group {
