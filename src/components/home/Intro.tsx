@@ -1,4 +1,7 @@
+import { Button } from "@mui/material";
 import logo from "../../assets/transparent.png";
+import resume from "../../assets/simes-cherron-resume.pdf";
+import photo from "../../assets/self-photo.jpg";
 
 const Intro = () => {
   return (
@@ -40,15 +43,19 @@ const Intro = () => {
           spelling bee, and using my turn signal on a regular basis.
         </p>
       </div>
-      <div id="about-me-section">
-        <img className="self-photo" src="assets/self-photo.jpg" alt="" />
-        <a
-          href="assets/Cherron-Simes.pdf"
+      <div id="about">
+        <img
+          className="self-photo"
+          src={photo}
+          alt="cherron with graduation cap and gown"
+        />
+        <Button
+          href={resume}
           className="btn btn-primary about-btn"
           target="_blank"
         >
           View Resume
-        </a>
+        </Button>
       </div>
       <div className="socials-group">
         <a href="https://github.com/csimes" target="_blank" rel="noreferrer">

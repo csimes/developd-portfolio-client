@@ -14,7 +14,7 @@ body {
   background-color: #e79d63;
 }
 
-/** Navigation **/
+/* Navigation */
 .nav-logo {
   max-width: 20px;
 }
@@ -30,6 +30,14 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   color: #eae7d4;
+}
+
+/* About Section */
+
+.self-photo {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
 }
 
 h1 {
