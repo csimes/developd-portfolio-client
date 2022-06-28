@@ -18,7 +18,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Logo from "../../assets/brandmark-design.png";
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact"];
+const navItems = ["Home", "About", "Blog", "Contact"];
 
 const Nav = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -29,11 +29,10 @@ const Nav = () => {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <img className="nav-logo" src={Logo} alt="" />
-      <Typography variant="h6" sx={{ my: 2 }}>
+      <img className="nav-logo" src={Logo} alt="developd logo" />
+      <Typography variant="subtitle1">
         developd | programmed to perfection.
       </Typography>
-      <Divider />
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
@@ -49,7 +48,7 @@ const Nav = () => {
   return (
     <Box sx={{ display: "flex" }}>
       <AppBar component="nav">
-        <Toolbar>
+        <Toolbar className="nav">
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -59,9 +58,9 @@ const Nav = () => {
           >
             <MenuIcon />
           </IconButton>
-          <img className="nav-logo" src={Logo} alt="" />
+          <img className="nav-logo" src={Logo} alt="developd logo" />
           <Typography
-            variant="h6"
+            variant="subtitle1"
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
@@ -69,7 +68,7 @@ const Nav = () => {
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }}>
+              <Button className="nav-btn" key={item}>
                 {item}
               </Button>
             ))}
