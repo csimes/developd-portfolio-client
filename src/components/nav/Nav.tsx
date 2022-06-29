@@ -2,7 +2,6 @@ import { useState } from "react";
 import {
   AppBar,
   Box,
-  Divider,
   Drawer,
   IconButton,
   List,
@@ -18,7 +17,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Logo from "../../assets/brandmark-design.png";
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Blog", "Contact"];
+const navItems = ["Home", "About", "Portfolio", "Blog", "Contact"];
 
 const Nav = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -28,7 +27,11 @@ const Nav = () => {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box
+      className="nav"
+      onClick={handleDrawerToggle}
+      sx={{ textAlign: "center" }}
+    >
       <img className="nav-logo" src={Logo} alt="developd logo" />
       <Typography variant="subtitle1">
         developd | programmed to perfection.
@@ -36,7 +39,7 @@ const Nav = () => {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemButton className="nav-btn" sx={{ textAlign: "center" }}>
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>

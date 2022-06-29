@@ -10,6 +10,7 @@ html {
 }
 
 body {
+  color: #47463b;
   font-family: "Montserrat", sans-serif;
   background-color: #e79d63;
 }
@@ -21,15 +22,17 @@ body {
   color: #eae7d4;
 }
 .nav-logo {
-  max-width: 20px;
+  max-width: 50px;
 }
 
-button.nav-btn {
+button.nav-btn,
+div.nav-btn {
   background-color: #e79d63;
   color: #eae7d4;
 }
 
-button.nav-btn:hover {
+button.nav-btn:hover,
+div.nav-btn:hover {
   color: #e79d63;
   background-color: #807e71;
 }
@@ -37,6 +40,7 @@ button.nav-btn:hover {
 /* Hero Section */
 
 .hero {
+  height: 100%;
   background-image: linear-gradient(
       to bottom,
       rgba(231, 157, 99, 0.99),
@@ -47,6 +51,7 @@ button.nav-btn:hover {
   background-repeat: no-repeat;
   background-size: cover;
   color: #eae7d4;
+  border-radius: 0 0 100px 100px;
 }
 
 /* About Section */

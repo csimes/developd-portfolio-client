@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import logo from "../../assets/transparent.png";
+
 import resume from "../../assets/simes-cherron-resume.pdf";
 import photo from "../../assets/self-photo.jpg";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -8,12 +8,7 @@ import GithubIcon from "@mui/icons-material/GitHub";
 const Intro = () => {
   return (
     <>
-      <div className="intro">
-        <img className="logo" src={logo} alt="" />
-        <h1>Hey, I'm </h1>
-        <h1 className="name">Cherron!</h1>
-        <h1>Web Developer and owner of</h1> <h1 className="name">developd.</h1>
-      </div>
+
 
       <div className="about">
         <div className="about-section-1">
