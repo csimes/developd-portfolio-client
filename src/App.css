@@ -11,10 +11,14 @@ html {
 
 body {
   color: #47463b;
-  font-family: "Montserrat", sans-serif;
   background-color: #e79d63;
 }
 
+body,
+button.MuiButton-root,
+div.MuiTypography-root {
+  font-family: "Montserrat", sans-serif;
+}
 /* Navigation */
 
 .nav {
@@ -40,7 +44,6 @@ div.nav-btn:hover {
 /* Hero Section */
 
 .hero {
-  height: 100%;
   background-image: linear-gradient(
       to bottom,
       rgba(231, 157, 99, 0.99),
