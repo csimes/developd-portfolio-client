@@ -15,15 +15,23 @@ body {
 }
 
 body,
+a.MuiButton-root,
 button.MuiButton-root,
-div.MuiTypography-root {
+div.MuiTypography-root,
+span.MuiTypography-root,
+p.MuiTypography-root {
   font-family: "Montserrat", sans-serif;
 }
+
 /* Navigation */
 
+nav.MuiPaper-root {
+  box-shadow: none;
+}
 .nav {
   background-color: #e79d63;
   color: #eae7d4;
+  margin: auto 0;
 }
 .nav-logo {
   max-width: 50px;
@@ -31,7 +39,6 @@ div.MuiTypography-root {
 
 button.nav-btn,
 div.nav-btn {
-  background-color: #e79d63;
   color: #eae7d4;
 }
 
@@ -44,9 +51,13 @@ div.nav-btn:hover {
 /* Hero Section */
 
 .hero {
+  display: flex;
+  flex-direction: column;
+
+  justify-items: center;
   background-image: linear-gradient(
       to bottom,
-      rgba(231, 157, 99, 0.99),
+      rgba(231, 157, 100, 0.99),
       rgba(128, 126, 113, 0.73)
     ),
     url("./assets/header-img.jpg");
@@ -55,6 +66,22 @@ div.nav-btn:hover {
   background-size: cover;
   color: #eae7d4;
   border-radius: 0 0 100px 100px;
+  height: 95vh;
+}
+
+.name {
+  font-weight: 700;
+  color: #47463b;
+}
+
+.intro {
+  margin: auto;
+  text-align: center;
+}
+
+.logo {
+  margin: 5% auto;
+  width: 35%;
 }
 
 /* About Section */
@@ -88,6 +115,7 @@ h1 {
   margin: 0.5rem;
 }
 
+/* Projects Section */
 .projects {
   display: flex;
   flex-direction: row;
@@ -97,22 +125,6 @@ h1 {
 
 .project-card {
   margin: 10px;
-}
-
-.name {
-  font-weight: 700;
-  color: #47463b;
-}
-
-.intro {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
-.logo {
-  margin: 5% auto;
-  width: 25%;
 }
 
 .social {
