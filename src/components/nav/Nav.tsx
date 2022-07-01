@@ -12,15 +12,31 @@ import {
   Typography,
   Button,
 } from "@mui/material/";
-
 import MenuIcon from "@mui/icons-material/Menu";
 import Logo from "../../assets/brandmark-design.png";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GithubIcon from "@mui/icons-material/GitHub";
 
 const drawerWidth = 240;
 const navItems = ["Home", "About", "Portfolio", "Blog", "Contact"];
 
 const Nav = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const socials = (
+    <div className="nav-social">
+      <a href="https://github.com/csimes" target="_blank" rel="noreferrer">
+        <GithubIcon htmlColor="#47463b" sx={{ fontSize: 32 }} />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/cherron-simes-1b016614b"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <LinkedInIcon htmlColor="#47463b" sx={{ fontSize: 32 }} />
+      </a>
+    </div>
+  );
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -76,6 +92,7 @@ const Nav = () => {
               </Button>
             ))}
           </Box>
+          {socials}
         </Toolbar>
       </AppBar>
       <Box component="nav">

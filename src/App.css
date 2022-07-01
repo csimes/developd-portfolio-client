@@ -30,8 +30,9 @@ nav.MuiPaper-root {
 }
 .nav {
   background-color: #e79d63;
-  color: #eae7d4;
+  color: #47463b;
   margin: auto 0;
+  box-shadow: 5px 2px 2px #de9b6a;
 }
 .nav-logo {
   max-width: 50px;
@@ -39,7 +40,7 @@ nav.MuiPaper-root {
 
 button.nav-btn,
 div.nav-btn {
-  color: #eae7d4;
+  color: #47463b;
 }
 
 button.nav-btn:hover,
@@ -48,12 +49,12 @@ div.nav-btn:hover {
   background-color: #807e71;
 }
 
+
 /* Hero Section */
 
 .hero {
   display: flex;
   flex-direction: column;
-
   justify-items: center;
   background-image: linear-gradient(
       to bottom,
@@ -128,10 +129,11 @@ h1 {
 }
 
 .social {
-  height: 2rem;
+  height: 10%;
   margin: 1.5rem;
 }
 
+/* Contact Form */
 .contact-form {
   display: flex;
   flex-direction: column;
