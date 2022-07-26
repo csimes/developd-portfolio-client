@@ -49,9 +49,9 @@ const Nav = () => {
       sx={{ textAlign: "center" }}
     >
       <img className="nav-logo" src={Logo} alt="developd logo" />
-      <Typography variant="subtitle1">
+      {/* <Typography variant="subtitle1">
         developd | programmed to perfection.
-      </Typography>
+      </Typography> */}
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
@@ -77,6 +77,7 @@ const Nav = () => {
           >
             <MenuIcon />
           </IconButton>
+          {/* Remove logo when mobile breakpoint is reached */}
           <img className="nav-logo" src={Logo} alt="developd logo" />
           <Typography
             variant="subtitle1"

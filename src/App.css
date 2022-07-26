@@ -24,15 +24,18 @@ p.MuiTypography-root {
 }
 
 /* Navigation */
-
-nav.MuiPaper-root {
-  box-shadow: none;
-}
+div.MuiPaper-root,
 .nav {
   background-color: #e79d63;
   color: #47463b;
+}
+nav.MuiPaper-root,
+div.MuiBox-root {
+  box-shadow: none;
+}
+.nav {
   margin: auto 0;
-  box-shadow: 5px 2px 2px #de9b6a;
+  box-shadow: 5px 5px 25px #47463b;
 }
 .nav-logo {
   max-width: 50px;
@@ -48,7 +51,6 @@ div.nav-btn:hover {
   color: #e79d63;
   background-color: #807e71;
 }
-
 
 /* Hero Section */
 

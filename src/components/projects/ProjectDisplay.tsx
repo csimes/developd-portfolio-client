@@ -53,10 +53,10 @@ class ProjectDisplay extends Component<
             <CardActions>
               <Button variant="outlined" href={project.githubUrl}>
                 {/* {github} */}
-                Github Repository
+                View Source Code
               </Button>
               <Button variant="outlined" href={project.projectUrl}>
-                Deployed Project
+                View Live Site
               </Button>
             </CardActions>
           </Card>
