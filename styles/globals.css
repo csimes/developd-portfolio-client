@@ -63,7 +63,7 @@ div.nav-btn:hover {
       rgba(231, 157, 100, 0.99),
       rgba(128, 126, 113, 0.73)
     ),
-    url("./assets/header-img.jpg");
+    url("../public/assets/header-img.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

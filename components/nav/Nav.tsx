@@ -13,7 +13,7 @@ import {
   Button,
 } from "@mui/material/";
 import MenuIcon from "@mui/icons-material/Menu";
-import Logo from "../../assets/brandmark-design.png";
+// import Logo from "../../assets/brandmark-design.png";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GithubIcon from "@mui/icons-material/GitHub";
 
@@ -48,7 +48,11 @@ const Nav = () => {
       onClick={handleDrawerToggle}
       sx={{ textAlign: "center" }}
     >
-      <img className="nav-logo" src={Logo} alt="developd logo" />
+      <img
+        className="nav-logo"
+        src="../../public/assets/brandmark-design.png"
+        alt="developd logo"
+      />
       {/* <Typography variant="subtitle1">
         developd | programmed to perfection.
       </Typography> */}
@@ -78,7 +82,11 @@ const Nav = () => {
             <MenuIcon />
           </IconButton>
           {/* Remove logo when mobile breakpoint is reached */}
-          <img className="nav-logo" src={Logo} alt="developd logo" />
+          <img
+            className="nav-logo"
+            src="../../public/assets/brandmark-design.png"
+            alt="developd logo"
+          />
           <Typography
             variant="subtitle1"
             component="div"
