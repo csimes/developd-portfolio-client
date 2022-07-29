@@ -1,6 +1,4 @@
 import { Button } from "@mui/material";
-// import resume from "../../public/assets/simes-cherron-resume.pdf";
-// import photo from "../../public/assets/self-photo.jpg";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GithubIcon from "@mui/icons-material/GitHub";
 
@@ -40,12 +38,12 @@ const About = () => {
       <div className="about-section-2">
         <img
           className="self-photo"
-          src="../../public/assets/self-photo.jpg"
+          src="/assets/self-photo.jpg"
           alt="cherron with graduation cap and gown"
         />
         <Button
           className="btn btn-primary about-btn"
-          href="../../public/assets/simes-cherron-resume.pdf"
+          href="/assets/simes-cherron-resume.pdf"
           target="_blank"
           variant="contained"
         >

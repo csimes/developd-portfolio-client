@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import Intro from "../components/home/Intro";
+import Intro from "./home/intro";
 import Nav from "../components/nav/Nav";
-
+import About from "./home/about";
 //move applicable styling to Home module
 import styles from "../styles/Home.module.css";
 
@@ -17,6 +17,7 @@ const Home: NextPage = () => {
       </Head>
       <Nav />
       <Intro />
+      <About />
       <footer className={styles.footer}>
         programmed to perfection by developd 2022
       </footer>
