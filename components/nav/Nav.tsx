@@ -1,3 +1,5 @@
+import React from "react";
+import Image from "next/image";
 import { useState } from "react";
 import {
   AppBar,
@@ -13,7 +15,6 @@ import {
   Button,
 } from "@mui/material/";
 import MenuIcon from "@mui/icons-material/Menu";
-// import Logo from "../../assets/brandmark-design.png";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GithubIcon from "@mui/icons-material/GitHub";
 
@@ -48,14 +49,13 @@ const Nav = () => {
       onClick={handleDrawerToggle}
       sx={{ textAlign: "center" }}
     >
-      <img
+      <Image
         className="nav-logo"
-        src="../../public/assets/brandmark-design.png"
+        src="/assets/brandmark-design.png"
         alt="developd logo"
+        width="50"
+        height="50"
       />
-      {/* <Typography variant="subtitle1">
-        developd | programmed to perfection.
-      </Typography> */}
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
@@ -82,10 +82,12 @@ const Nav = () => {
             <MenuIcon />
           </IconButton>
           {/* Remove logo when mobile breakpoint is reached */}
-          <img
+          <Image
             className="nav-logo"
-            src="../../public/assets/brandmark-design.png"
+            src="/assets/brandmark-design.png"
             alt="developd logo"
+            width="50"
+            height="50"
           />
           <Typography
             variant="subtitle1"
