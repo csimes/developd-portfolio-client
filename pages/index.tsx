@@ -1,10 +1,9 @@
 import type { NextPage } from "next";
+import Link from "next/link";
 import Head from "next/head";
-import Image from "next/image";
 import Intro from "./home/intro";
-import Nav from "../components/nav/Nav";
+import Nav from "../components/nav/nav";
 import About from "./home/about";
-//move applicable styling to Home module
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
@@ -19,7 +18,11 @@ const Home: NextPage = () => {
       <Intro />
       <About />
       <footer className={styles.footer}>
-        programmed to perfection by developd 2022
+        programmed to perfection by{" "}
+        <Link href="/">
+          <a>developd</a>
+        </Link>{" "}
+        2022
       </footer>
     </div>
   );

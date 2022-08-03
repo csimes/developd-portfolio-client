@@ -15,11 +15,8 @@ body {
 }
 
 body,
-a.MuiButton-root,
-button.MuiButton-root,
-div.MuiTypography-root,
-span.MuiTypography-root,
-p.MuiTypography-root {
+.MuiButton-root,
+.MuiTypography-root {
   font-family: "Montserrat", sans-serif;
 }
 
@@ -41,15 +38,26 @@ div.MuiBox-root {
   max-width: 50px;
 }
 
-button.nav-btn,
-div.nav-btn {
+a.nav-btn {
+  padding: 0.5rem;
+  text-decoration: none;
   color: #47463b;
+  border-radius: 0.5rem;
+  border: 1px solid #47463b;
+  margin: 0.25rem;
 }
 
-button.nav-btn:hover,
-div.nav-btn:hover {
+a.nav-btn:hover {
   color: #e79d63;
-  background-color: #807e71;
+  background-color: #47463b;
+}
+a.nav-btn:active {
+  text-decoration: underline;
+  text-decoration-color: #e79d63;
+}
+
+.nav-social {
+  margin: 1rem;
 }
 
 /* Hero Section */
@@ -136,7 +144,7 @@ h1 {
 }
 
 /* Contact Form */
-.contact-form {
+/* .contact-form {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -159,4 +167,4 @@ input {
   width: 50%;
   height: 30px;
   padding: 5px;
-}
+} */

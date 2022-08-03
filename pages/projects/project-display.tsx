@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ProjectDisplay from "./ProjectDisplay";
+import ProjectDisplay from "./project-mapper";
 
 
 const ProjectIndex = () => {

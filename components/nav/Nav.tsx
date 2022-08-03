@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import {
   AppBar,
@@ -19,7 +20,15 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GithubIcon from "@mui/icons-material/GitHub";
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Portfolio", "Blog", "Contact"];
+const navItems = {
+  items: [
+    { title: "Home", link: "/" },
+    { title: "About", link: "/home/about" },
+    { title: "Projects", link: "projects/project-display" },
+    { title: "Blog", link: "/blog/" },
+    { title: "Contact", link: "/contact" },
+  ],
+};
 
 const Nav = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -56,15 +65,19 @@ const Nav = () => {
         width="50"
         height="50"
       />
+      <Typography variant="subtitle2">
+        developd | programmed to perfection
+      </Typography>
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton className="nav-btn" sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
+        {navItems.items.map((item: any) => (
+          <ListItem key={item}>
+            <Link href={item.link}>
+              <a className="nav-btn">{item.title}</a>
+            </Link>
           </ListItem>
         ))}
       </List>
+      {socials}
     </Box>
   );
 
@@ -97,10 +110,10 @@ const Nav = () => {
             developd | programmed to perfection
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
-              <Button className="nav-btn" key={item}>
-                {item}
-              </Button>
+            {navItems.items.map((item: any) => (
+              <Link href={item.link} key={item}>
+                <a className="nav-btn">{item.title}</a>
+              </Link>
             ))}
           </Box>
           {socials}
