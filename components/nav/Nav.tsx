@@ -33,21 +33,6 @@ const navItems = {
 const Nav = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const socials = (
-    <div className="nav-social">
-      <a href="https://github.com/csimes" target="_blank" rel="noreferrer">
-        <GithubIcon htmlColor="#47463b" sx={{ fontSize: 32 }} />
-      </a>
-      <a
-        href="https://www.linkedin.com/in/cherron-simes-1b016614b"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <LinkedInIcon htmlColor="#47463b" sx={{ fontSize: 32 }} />
-      </a>
-    </div>
-  );
-
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -77,7 +62,18 @@ const Nav = () => {
           </ListItem>
         ))}
       </List>
-      {socials}
+      <div className="nav-social">
+        <a href="https://github.com/csimes" target="_blank" rel="noreferrer">
+          <GithubIcon htmlColor="#47463b" sx={{ fontSize: 32 }} />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/cherron-simes-1b016614b"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <LinkedInIcon htmlColor="#47463b" sx={{ fontSize: 32 }} />
+        </a>
+      </div>
     </Box>
   );
 
@@ -96,7 +92,7 @@ const Nav = () => {
           </IconButton>
           {/* Remove logo when mobile breakpoint is reached */}
           <Image
-            className="nav-logo"
+            className="nav-logo desktop"
             src="/assets/brandmark-design.png"
             alt="developd logo"
             width="50"
@@ -116,7 +112,22 @@ const Nav = () => {
               </Link>
             ))}
           </Box>
-          {socials}
+          <div className="nav-social desktop">
+            <a
+              href="https://github.com/csimes"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <GithubIcon htmlColor="#47463b" sx={{ fontSize: 32 }} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/cherron-simes-1b016614b"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <LinkedInIcon htmlColor="#47463b" sx={{ fontSize: 32 }} />
+            </a>
+          </div>
         </Toolbar>
       </AppBar>
       <Box component="nav">

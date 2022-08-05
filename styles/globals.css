@@ -60,6 +60,11 @@ a.nav-btn:active {
   margin: 1rem;
 }
 
+@media only screen and (max-width: 600px) {
+  div.desktop {
+    display: none;
+  }
+}
 /* Hero Section */
 
 .hero {
