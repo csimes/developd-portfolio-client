@@ -19,7 +19,7 @@ const Intro = () => {
         />
         <h1>Hey, I'm </h1>
         <h1 className={styles.name}>Cherron!</h1>
-        <h1>Web Developer and owner of</h1>{" "}
+        <h1>Web Developer and owner of</h1>
         <h1 className={styles.name}>developd.</h1>
       </div>
     </div>

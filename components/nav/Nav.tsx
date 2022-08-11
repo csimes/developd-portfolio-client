@@ -9,22 +9,20 @@ import {
   IconButton,
   List,
   ListItem,
-  ListItemButton,
-  ListItemText,
   Toolbar,
   Typography,
-  Button,
 } from "@mui/material/";
 import MenuIcon from "@mui/icons-material/Menu";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GithubIcon from "@mui/icons-material/GitHub";
-import styles from "../../styles/Nav.module.css";
+
 
 const drawerWidth = 240;
 const navItems = {
   items: [
     { title: "Home", link: "/" },
-    { title: "About", link: "/home/about" },
+    { title: "About", link: "#about" },
+    { title: "Skills", link: "#skills" },
     { title: "Projects", link: "projects/project-display" },
     { title: "Blog", link: "/blog/" },
     { title: "Contact", link: "/contact" },

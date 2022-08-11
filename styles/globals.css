@@ -68,7 +68,7 @@ a.nav-btn:active {
 
 /* About Section */
 
-.about {
+#about {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -83,7 +83,7 @@ a.nav-btn:active {
 }
 
 .self-photo {
-  border-radius: 40%;
+  border-radius: 20px;
   margin: auto;
 }
 

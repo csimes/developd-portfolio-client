@@ -4,6 +4,7 @@ import Head from "next/head";
 import Intro from "./home/intro";
 import Nav from "../components/nav/nav";
 import About from "./home/about";
+import Skills from "./home/skills";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
@@ -17,12 +18,13 @@ const Home: NextPage = () => {
       <Nav />
       <Intro />
       <About />
+      <Skills />
       <footer className={styles.footer}>
-        programmed to perfection by{" "}
+        programmed to perfection by&nbsp;
         <Link href="/">
           <a>developd</a>
-        </Link>{" "}
-        2022
+        </Link>
+        &nbsp; &copy; 2022
       </footer>
     </div>
   );

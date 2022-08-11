@@ -3,12 +3,13 @@ import { Button } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GithubIcon from "@mui/icons-material/GitHub";
 
+const photo = "/assets/self-photo.jpg";
+
 const About = () => {
   return (
-    <div className="about">
+    <div id="about">
       <div className="about-section-1">
         <h2 className="card-title">About Me</h2>
-
         <p>
           As an elder Millennial, I grew up observing the evolution of the
           internet (remember dial-up?), which I've always found fascinating. I
@@ -39,10 +40,10 @@ const About = () => {
       <div className="about-section-2">
         <Image
           className="self-photo"
-          src="/assets/self-photo.jpg"
+          src={photo}
           alt="cherron with graduation cap and gown"
-          width="650"
-          height="600"
+          width="550"
+          height="1048"
         />
         <Button
           className="btn btn-primary about-btn"
