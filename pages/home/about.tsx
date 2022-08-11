@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GithubIcon from "@mui/icons-material/GitHub";
@@ -36,10 +37,12 @@ const About = () => {
         </p>
       </div>
       <div className="about-section-2">
-        <img
+        <Image
           className="self-photo"
           src="/assets/self-photo.jpg"
           alt="cherron with graduation cap and gown"
+          width="650"
+          height="600"
         />
         <Button
           className="btn btn-primary about-btn"

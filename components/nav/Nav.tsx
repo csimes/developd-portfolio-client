@@ -18,6 +18,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GithubIcon from "@mui/icons-material/GitHub";
+import styles from "../../styles/Nav.module.css";
 
 const drawerWidth = 240;
 const navItems = {
