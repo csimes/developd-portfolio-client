@@ -36,15 +36,6 @@ const About = () => {
           daughter to my wonderful mother, winning bronze medal in my 4th grade
           spelling bee, and using my turn signal on a regular basis.
         </p>
-      </div>
-      <div className="about-section-2">
-        <Image
-          className="self-photo"
-          src={photo}
-          alt="cherron with graduation cap and gown"
-          width="550"
-          height="1048"
-        />
         <Button
           className="btn btn-primary about-btn"
           href="/assets/simes-cherron-resume.pdf"
@@ -53,26 +44,15 @@ const About = () => {
         >
           View Resume
         </Button>
-        <div className="social">
-          <a href="https://github.com/csimes" target="_blank" rel="noreferrer">
-            <GithubIcon
-              className="social-icon"
-              htmlColor="#47463b"
-              sx={{ fontSize: 50 }}
-            />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/cherron-simes-1b016614b"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <LinkedInIcon
-              className="social-icon"
-              htmlColor="#47463b"
-              sx={{ fontSize: 50 }}
-            />
-          </a>
-        </div>
+      </div>
+      <div className="about-section-2">
+        <Image
+          className="self-photo"
+          src={photo}
+          alt="cherron selfie"
+          width="550"
+          height="1048"
+        />
       </div>
     </div>
   );

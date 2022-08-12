@@ -51,6 +51,7 @@ a.nav-btn:hover {
   color: #e79d63;
   background-color: #47463b;
 }
+
 a.nav-btn:active {
   text-decoration: underline;
   text-decoration-color: #e79d63;
@@ -89,11 +90,23 @@ a.nav-btn:active {
 
 .about-btn {
   max-width: 50%;
+  color: #e79d63;
+  background-color: #47463b;
+  text-align: center;
+}
+.about-btn:hover {
+  text-decoration: underline;
+  background-color: #47463b;
 }
 
 h1 {
   font-weight: 400;
   margin: 0.5rem;
+}
+
+.card-title {
+  text-transform: uppercase;
+  text-decoration: overline;
 }
 
 /* Projects Section */

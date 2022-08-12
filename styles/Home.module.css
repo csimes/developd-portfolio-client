@@ -3,16 +3,13 @@
 }
 
 .footer {
-  display: flex;
-  flex: 1;
+  color: #e79d63;
+  background-color: #47463b;
   padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 
 .footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-decoration: none;
+  color: #eae7d4;
 }
