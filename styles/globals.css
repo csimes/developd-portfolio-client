@@ -20,6 +20,10 @@ body,
   font-family: "Montserrat", sans-serif;
 }
 
+.container {
+  margin: 6rem 4rem;
+}
+
 /* Navigation */
 div.MuiPaper-root,
 .nav {
