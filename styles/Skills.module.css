@@ -1,11 +1,14 @@
 .skillsContainer {
   display: grid;
   grid-template-columns: repeat(5, auto);
-  gap: 25px;
+  row-gap: 15px;
   margin: 20px auto;
 }
 
 .skillsItem {
   text-align: center;
   margin: auto;
+  border: 3px #47463b solid;
+  border-radius: 10px;
+  padding: 5px 20px;
 }

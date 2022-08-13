@@ -1,8 +1,6 @@
 import type { NextPage } from "next";
-import Link from "next/link";
 import Head from "next/head";
 import Intro from "./home/intro";
-import Nav from "../components/nav/nav";
 import About from "./home/about";
 import Skills from "./home/skills";
 import styles from "../styles/Home.module.css";
@@ -17,17 +15,9 @@ const Home: NextPage = () => {
       </Head>
       <Intro />
       <div className={styles.container}>
-        <Nav />
         <About />
         <Skills />
       </div>
-      <footer className={styles.footer}>
-        programmed to perfection by&nbsp;
-        <Link href="/">
-          <a>developd</a>
-        </Link>
-        &nbsp; &copy; 2022
-      </footer>
     </div>
   );
 };
