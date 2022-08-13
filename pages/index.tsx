@@ -3,7 +3,6 @@ import Head from "next/head";
 import Intro from "./home/intro";
 import About from "./home/about";
 import Skills from "./home/skills";
-import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   return (
@@ -14,10 +13,8 @@ const Home: NextPage = () => {
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
       </Head>
       <Intro />
-      <div className={styles.container}>
-        <About />
-        <Skills />
-      </div>
+      <About />
+      <Skills />
     </div>
   );
 };

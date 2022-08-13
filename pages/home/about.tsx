@@ -1,7 +1,5 @@
 import Image from "next/image";
 import { Button } from "@mui/material";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GithubIcon from "@mui/icons-material/GitHub";
 
 const photo = "/assets/self-photo.jpg";
 

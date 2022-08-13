@@ -20,8 +20,8 @@ const drawerWidth = 240;
 const navItems = {
   items: [
     { title: "Home", link: "/" },
-    { title: "About", link: "#about" },
-    { title: "Skills", link: "#skills" },
+    { title: "About", link: "/#about" },
+    { title: "Skills", link: "/#skills" },
     { title: "Projects", link: "/projects" },
     { title: "Blog", link: "/blog/" },
     { title: "Contact", link: "/contact" },
