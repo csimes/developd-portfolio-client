@@ -10,24 +10,25 @@ const About = () => {
         <h2 className="card-title">About Me</h2>
         <p>
           As an elder Millennial, I grew up observing the evolution of the
-          internet (remember dial-up?), which I've always found fascinating. I
-          began my web development journey in April 2018, and I've been working
-          to hone my skills ever since. I graduated Eleven Fifty Academy's Web
-          Development bootcamp in October 2021, and I'm always working on a
-          project while I search for the right junior developer role for me.
+          internet (remember dial-up?), which I&apos;ve always found
+          fascinating. I began my web development journey in April 2018, and
+          I&apos;ve been working to hone my skills ever since. I graduated
+          Eleven Fifty Academy&apos;s Web Development bootcamp in October 2021,
+          and I&apos;m always working on a project while I search for the right
+          junior developer role for me.
         </p>
         <p>
-          I'm a highly motivated web developer with proficiency in front-end
-          technologies and stellar project management skills who is eager to
-          contribute to company efforts through hard work, effective
+          I&apos;m a highly motivated web developer with proficiency in
+          front-end technologies and stellar project management skills who is
+          eager to contribute to company efforts through hard work, effective
           communication, and creative problem-solving. What I lack in knowledge,
           I make up for in grit and the ability to learn new things at an
           alarmingly fast rate.
         </p>
         <p>
-          When I'm not changing the world one line of code at a time, I enjoy
-          listening to music - ranging from classic rock to EDM or watching some
-          of my favorite shows - like Supernatural or Sherlock.
+          When I&apos;m not changing the world one line of code at a time, I
+          enjoy listening to music - ranging from classic rock to EDM or
+          watching some of my favorite shows - like Supernatural or Sherlock.
         </p>
         <p>
           Some of my most notable achievements include being the best (and only)
