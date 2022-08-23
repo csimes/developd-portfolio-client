@@ -3,11 +3,7 @@ import Head from "next/head";
 import Nav from "./nav";
 import Footer from "./footer";
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
-
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children }: any) => {
   return (
     <>
       <Head>

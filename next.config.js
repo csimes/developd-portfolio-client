@@ -5,6 +5,16 @@ const nextConfig = {
   images: {
     domains: ["raw.githubusercontent.com"],
   },
+  target: "serverless",
+  async rewrites() {
+    return [
+      // Rewrite everything to `pages/index`
+      {
+        source: "/:any*",
+        destination: "/",
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
