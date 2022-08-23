@@ -17,7 +17,7 @@ const Intro = () => {
           width="380"
           height="100"
         />
-        <h1>Hey, I'm </h1>
+        <h1>Hey, I&apos;m </h1>
         <h1 className={styles.name}>Cherron!</h1>
         <h1>Web Developer and owner of</h1>
         <h1 className={styles.name}>developd.</h1>
