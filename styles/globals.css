@@ -1,7 +1,8 @@
 body,
 html {
-  height: 100%;
   margin: 0;
+  width: 100%;
+  height: 100%;
 }
 
 html {
@@ -47,7 +48,7 @@ a.nav-btn {
   text-decoration: none;
   color: #47463b;
   border-radius: 0.5rem;
-  border: 1px solid kkk#47463b;
+  border: 1px solid #47463b;
   margin: 0.25rem;
 }
 

@@ -1,4 +1,3 @@
-import { BottomNavigation } from "@mui/material";
 import type { NextPage } from "next";
 import Image from "next/image";
 
@@ -83,7 +82,7 @@ const projectItems = {
 };
 
 const Projects: NextPage = () => {
-  return <div></div>;
+  return <div>The projects section is currently under construction!</div>;
 };
 
 export default Projects;

@@ -36,7 +36,7 @@ const About = () => {
           spelling bee, and using my turn signal on a regular basis.
         </p>
         <Button
-          className="btn btn-primary about-btn"
+          className="about-btn"
           href="/assets/simes-cherron-resume.pdf"
           target="_blank"
           variant="contained"
