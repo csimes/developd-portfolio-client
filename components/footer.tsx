@@ -4,10 +4,7 @@ import styles from "../styles/Footer.module.css";
 
 const Footer = () => {
   return (
-    <Paper
-      className={styles.footer}
-      sx={{ position: "sticky", bottom: 0, left: 0, right: 0 }}
-    >
+    <Paper sx={{ position: "sticky", bottom: 0, left: 0, right: 0 }}>
       <BottomNavigation className={styles.footer}>
         <p>
           programmed to perfection by&nbsp;{" "}
