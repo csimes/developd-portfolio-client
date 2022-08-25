@@ -17,6 +17,8 @@ body {
 
 body,
 html,
+main,
+div#_next
 .MuiButton-root,
 .MuiTypography-root {
   font-family: "Montserrat", sans-serif;
