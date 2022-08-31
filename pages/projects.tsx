@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Image from "next/image";
-
+import styles from "../styles/Projects.module.css";
 const projectItems = {
   projects: [
     {
@@ -82,7 +82,26 @@ const projectItems = {
 };
 
 const Projects: NextPage = () => {
-  return <div>The projects section is currently under construction!</div>;
+  return (
+    <div className={styles.projectContainer}>
+      <h2 className="card-title">Projects</h2>
+      <div className={styles.projects}>
+        {projectItems.projects.map((project: any) => (
+          <div key={project}>
+            <div>Project Title: {project.name}</div>
+            <div>{project.summary}</div>
+            <a className={styles.projectButton} href={project.url}>
+              Deployed Project
+            </a>
+            <br />
+            <a className={styles.projectButton} href={project.sourceCode}>
+              Source Code
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Projects;

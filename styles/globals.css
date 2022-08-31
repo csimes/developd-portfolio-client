@@ -112,18 +112,6 @@ h1 {
   text-decoration: overline;
 }
 
-/* Projects Section */
-.projects {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-
-.project-card {
-  margin: 10px;
-}
-
 .social {
   height: 10%;
   margin: 1.5rem;
