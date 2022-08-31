@@ -97,7 +97,7 @@ const skillItems = {
 };
 const Skills = () => {
   return (
-    <div id="skills">
+    <div className="container" id="skills">
       <h2 className="card-title">Skills</h2>
       <div className={styles.skillsContainer}>
         {skillItems.skills.map((skill: any) => (

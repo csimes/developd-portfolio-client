@@ -5,7 +5,7 @@ const photo = "/assets/self-photo.jpg";
 
 const About = () => {
   return (
-    <div id="about">
+    <div className="container" id="about">
       <div className="about-section-1">
         <h2 className="card-title">About Me</h2>
         <p>

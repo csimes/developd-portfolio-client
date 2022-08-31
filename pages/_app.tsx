@@ -7,9 +7,7 @@ import "@fontsource/montserrat/700.css";
 function MyApp({ Component, pageProps }: any) {
   return (
     <Layout>
-      <div className="container">
-        <Component {...pageProps} />
-      </div>
+      <Component {...pageProps} />
     </Layout>
   );
 }
