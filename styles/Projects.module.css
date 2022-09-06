@@ -1,12 +1,12 @@
 .projectContainer {
   margin: 6rem 2.5rem;
 }
-.projects {
+/* .projects {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-evenly;
-}
+} */
 
 /** Double check and make sure global styling won't work for the button styling **/
 
@@ -19,6 +19,7 @@
   border: 1px solid #47463b;
 }
 
-.project-card {
+.projectCard {
   margin: 10px;
+  background-color: #47463b;
 }
