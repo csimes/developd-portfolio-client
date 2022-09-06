@@ -96,7 +96,11 @@ const Projects: NextPage = () => {
       <h2 className="card-title">Projects</h2>
       <div className={styles.projects}>
         {projectItems.projects.map((project: any) => (
-          <Card sx={{ maxWidth: 345 }} key={project} className={styles.projectCard}>
+          <Card
+            sx={{ maxWidth: 345 }}
+            key={project}
+            className={styles.projectCard}
+          >
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
                 {project.name}
@@ -105,21 +109,23 @@ const Projects: NextPage = () => {
                 {project.summary}
               </Typography>
             </CardContent>
-            <Button
-              size="small"
-              className={styles.projectButton}
-              href={project.url}
-            >
-              Deployed Project
-            </Button>
-            <br />
-            <Button
-              size="small"
-              className={styles.projectButton}
-              href={project.sourceCode}
-            >
-              Source Code
-            </Button>
+            <CardActions>
+              <Button
+                size="small"
+                className={styles.projectButton}
+                href={project.url}
+              >
+                Deployed Project
+              </Button>
+              <br />
+              <Button
+                size="small"
+                className={styles.projectButton}
+                href={project.sourceCode}
+              >
+                Source Code
+              </Button>
+            </CardActions>
           </Card>
         ))}
       </div>
