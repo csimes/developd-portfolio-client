@@ -1,8 +1,5 @@
 html {
-  height: 100%;
-}
-
-html {
+  /* height: 100%; */
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
@@ -116,29 +113,3 @@ h1 {
   height: 10%;
   margin: 1.5rem;
 }
-
-/* Contact Form */
-/* .contact-form {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  font-size: 24px;
-}
-
-label,
-input {
-  margin: 0.5rem;
-}
-
-input,
-button {
-  font-family: "Montserrat", sans-serif;
-  border: 2px solid black;
-  border-radius: 50px;
-}
-
-input {
-  width: 50%;
-  height: 30px;
-  padding: 5px;
-} */
