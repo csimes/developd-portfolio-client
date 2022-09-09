@@ -1,4 +1,8 @@
 .footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   background-color: #e79d63;
   color: #eae7d4;
   text-align: center;
@@ -6,5 +10,5 @@
 
 .footer a {
   text-decoration: none;
-  color: #47463bad;
+  color: #47463b;
 }
