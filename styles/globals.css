@@ -17,7 +17,9 @@ body {
 body,
 html,
 .MuiButton-root,
-.MuiTypography-root, div.MuiTypography-root, h6.MuiTypography-root  {
+.MuiTypography-root,
+div.MuiTypography-root,
+h6.MuiTypography-root {
   font-family: "Montserrat", sans-serif;
 }
 
@@ -30,14 +32,12 @@ html,
 .nav {
   background-color: #e79d63;
   color: #47463b;
+  margin: 0;
+  box-shadow: 5px 5px 25px #47463b;
 }
 nav.MuiPaper-root,
 div.MuiBox-root {
   box-shadow: none;
-}
-.nav {
-  margin: 0;
-  box-shadow: 5px 5px 25px #47463b;
 }
 
 a.nav-btn {
@@ -50,8 +50,8 @@ a.nav-btn {
 }
 
 a.nav-btn:hover {
-  color: #e79d63;
-  background-color: #47463b;
+  padding: 0.75rem;
+  text-decoration: overline;
 }
 
 a.nav-btn:active {
@@ -89,13 +89,17 @@ a.nav-btn:active {
   margin: auto;
 }
 
-.about-btn {
+a.about-btn {
+  padding: 0.75rem;
   color: #e79d63;
   background-color: #47463b;
   text-align: center;
+  border-radius: 10px;
+  text-decoration: none;
 }
 .about-btn:hover {
-  text-decoration: underline;
+  padding: 1rem;
+  text-decoration: overline;
   background-color: #47463b;
 }
 
