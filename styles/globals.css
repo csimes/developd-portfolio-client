@@ -69,51 +69,8 @@ a.nav-btn:active {
   }
 }
 
-/* About Section */
-
-#about {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-items: center;
-}
-
-.about-section-2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.self-photo {
-  border-radius: 20px;
-  margin: auto;
-}
-
-a.about-btn {
-  padding: 0.75rem;
-  color: #e79d63;
-  background-color: #47463b;
-  text-align: center;
-  border-radius: 10px;
-  text-decoration: none;
-}
-.about-btn:hover {
-  padding: 1rem;
-  text-decoration: overline;
-  background-color: #47463b;
-}
-
-h1 {
-  font-weight: 400;
-  margin: 0.5rem;
-}
-
+/* Headings */
 .card-title {
   text-transform: uppercase;
   text-decoration: overline;
-}
-
-.social {
-  height: 10%;
-  margin: 1.5rem;
 }

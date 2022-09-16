@@ -1,0 +1,33 @@
+.aboutSection,
+.aboutPhoto {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: center;
+}
+.aboutText {
+  margin: auto;
+}
+
+.aboutPhoto {
+  border: 6px solid #47463b;
+  border-radius: 20px;
+}
+
+.selfie {
+  z-index: -1;
+}
+
+a.aboutBtn {
+  padding: 0.75rem;
+  color: #e79d63;
+  background-color: #47463b;
+  text-align: center;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.aboutBtn:hover {
+  padding: 1rem;
+  text-decoration: overline;
+  background-color: #47463b;
+}
