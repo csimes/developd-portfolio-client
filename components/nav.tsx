@@ -15,6 +15,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GithubIcon from "@mui/icons-material/GitHub";
+import InstagramIcon from "@mui/icons-material/Instagram";
 
 const drawerWidth = 240;
 const navItems = {
@@ -66,6 +67,13 @@ const Nav = () => {
         </a>
         <a
           href="https://www.linkedin.com/in/cherron-simes-1b016614b"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <InstagramIcon htmlColor="#47463b" sx={{ fontSize: 32 }} />
+        </a>
+        <a
+          href="https://www.instagram.com/thelittlecoderthatcould/"
           target="_blank"
           rel="noreferrer"
         >
@@ -124,6 +132,13 @@ const Nav = () => {
               rel="noreferrer"
             >
               <LinkedInIcon htmlColor="#47463b" sx={{ fontSize: 32 }} />
+            </a>
+            <a
+              href="https://www.instagram.com/thelittlecoderthatcould/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <InstagramIcon htmlColor="#47463b" sx={{ fontSize: 32 }} />
             </a>
           </div>
         </Toolbar>
