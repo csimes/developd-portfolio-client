@@ -30,6 +30,9 @@
 }
 
 .name {
-  font-weight: 700;
   color: #47463b;
+}
+
+.text {
+  font-weight: 500;
 }
