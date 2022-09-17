@@ -16,9 +16,10 @@ body {
 
 body,
 html,
-.MuiButton-root,
+a.MuiButton-root,
 .MuiTypography-root,
 div.MuiTypography-root,
+p.MuiTypography-root,
 h6.MuiTypography-root {
   font-family: "Montserrat", sans-serif;
 }

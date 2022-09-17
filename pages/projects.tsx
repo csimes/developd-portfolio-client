@@ -35,7 +35,7 @@ const projectItems = {
       summary: "This is a website I made for an imaginary animal sanctuary.",
       image: "/assets/noahs-bark.png",
       url: "https://csimes.github.io/noahs-bark/",
-      sourceCode: "",
+      sourceCode: "https://github.com/csimes/noahs-bark",
       inProgress: false,
     },
     {
@@ -52,15 +52,15 @@ const projectItems = {
       summary: "This is a replication of part of the Hulu homepage.",
       image: "/assets/static-layout-hulu.png",
       url: "http://csimes.github.io/",
-      sourceCode: "",
+      sourceCode: "https://github.com/csimes/csimes.github.io",
       inProgress: false,
     },
     {
       name: "Studio Ghibli API",
       summary: "This is my first project using an API.",
       image: "/assets/studio-ghibli.png",
-      url: "",
-      sourceCode: "",
+      url: "https://studioghibli-api.web.app/",
+      sourceCode: "https://github.com/csimes/studio-ghibli-api",
       inProgress: false,
     },
     {
@@ -68,7 +68,7 @@ const projectItems = {
       summary: "This is my second project using an API.",
       image: "/assets/nasa-api.png",
       url: "https://nasa-api-a53fa.web.app/",
-      sourceCode: "",
+      sourceCode: "https://github.com/csimes/nasa-api",
       inProgress: false,
     },
     {
@@ -76,8 +76,8 @@ const projectItems = {
       summary: "This is the original version of my portfolio.",
       image: "",
       url: "https://csimes.github.io/portfolio/",
-      sourceCode: "",
-      inProgress: "",
+      sourceCode: "https://github.com/csimes/portfolio",
+      inProgress: false,
     },
     // {
     //   name: "",
@@ -105,7 +105,7 @@ const Projects: NextPage = () => {
               <Typography gutterBottom variant="h5" component="div">
                 {project.name}
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography variant="body2" color="#e9e7d4">
                 {project.summary}
               </Typography>
             </CardContent>
@@ -114,6 +114,8 @@ const Projects: NextPage = () => {
                 size="small"
                 className={styles.projectButton}
                 href={project.url}
+                target="_blank"
+                variant="contained"
               >
                 Deployed Project
               </Button>
@@ -122,6 +124,8 @@ const Projects: NextPage = () => {
                 size="small"
                 className={styles.projectButton}
                 href={project.sourceCode}
+                target="_blank"
+                variant="contained"
               >
                 Source Code
               </Button>
