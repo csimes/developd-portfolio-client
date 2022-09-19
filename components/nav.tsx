@@ -25,7 +25,7 @@ const navItems = {
     { title: "Skills", link: "/#skills" },
     { title: "Projects", link: "#projects" },
     { title: "Blog", link: "/blog/" },
-    { title: "Contact", link: "/contact" },
+    { title: "Contact", link: "/#contact" },
   ],
 };
 

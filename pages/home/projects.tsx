@@ -9,7 +9,7 @@ import {
   CardMedia,
   Button,
 } from "@mui/material/";
-import styles from "../styles/Projects.module.css";
+import styles from "../../styles/Projects.module.css";
 const projectItems = {
   projects: [
     {
