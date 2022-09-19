@@ -42,8 +42,9 @@ const About = () => {
             className={styles.selfie}
             src={photo}
             alt="cherron selfie"
-            width="200"
-            height="380"
+            layout="intrinsic"
+            width="450"
+            height="700"
           />
         </div>
       </div>

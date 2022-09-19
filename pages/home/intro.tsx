@@ -14,6 +14,7 @@ const Intro = () => {
           className={styles.logoContent}
           src={logo}
           alt="developd logo"
+          layout="intrinsic"
           width="380"
           height="100"
         />
