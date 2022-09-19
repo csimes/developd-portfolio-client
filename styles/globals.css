@@ -35,7 +35,9 @@ h6.MuiTypography-root {
   color: #47463b;
   margin: 0;
   box-shadow: 5px 5px 25px #47463b;
+  height: 100%;
 }
+
 nav.MuiPaper-root,
 div.MuiBox-root {
   box-shadow: none;
@@ -64,7 +66,8 @@ a.nav-btn:active {
   margin: 1rem;
 }
 
-@media only screen and (max-width: 600px) {
+/* removes social icons when breakpoint is hit; this prevents nav from wrapping elements too much and covering the hero image*/
+@media only screen and (max-width: 1000px) {
   div.desktop {
     display: none;
   }

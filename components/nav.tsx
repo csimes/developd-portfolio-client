@@ -36,6 +36,28 @@ const Nav = () => {
     setMobileOpen(!mobileOpen);
   };
 
+  const socials = (
+    <>
+      <a href="https://github.com/csimes" target="_blank" rel="noreferrer">
+        <GithubIcon htmlColor="#47463b" sx={{ fontSize: 32 }} />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/cherron-simes-1b016614b"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <LinkedInIcon htmlColor="#47463b" sx={{ fontSize: 32 }} />
+      </a>
+      <a
+        href="https://www.instagram.com/thelittlecoderthatcould/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <InstagramIcon htmlColor="#47463b" sx={{ fontSize: 32 }} />
+      </a>
+    </>
+  );
+
   const drawer = (
     <Box
       className="nav"
@@ -61,25 +83,7 @@ const Nav = () => {
           </ListItem>
         ))}
       </List>
-      <div className="nav-social">
-        <a href="https://github.com/csimes" target="_blank" rel="noreferrer">
-          <GithubIcon htmlColor="#47463b" sx={{ fontSize: 32 }} />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/cherron-simes-1b016614b"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <InstagramIcon htmlColor="#47463b" sx={{ fontSize: 32 }} />
-        </a>
-        <a
-          href="https://www.instagram.com/thelittlecoderthatcould/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <LinkedInIcon htmlColor="#47463b" sx={{ fontSize: 32 }} />
-        </a>
-      </div>
+      <div className="nav-social">{socials}</div>
     </Box>
   );
 
@@ -118,32 +122,10 @@ const Nav = () => {
               </Link>
             ))}
           </Box>
-          <div className="nav-social desktop">
-            <a
-              href="https://github.com/csimes"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <GithubIcon htmlColor="#47463b" sx={{ fontSize: 32 }} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/cherron-simes-1b016614b"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <LinkedInIcon htmlColor="#47463b" sx={{ fontSize: 32 }} />
-            </a>
-            <a
-              href="https://www.instagram.com/thelittlecoderthatcould/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <InstagramIcon htmlColor="#47463b" sx={{ fontSize: 32 }} />
-            </a>
-          </div>
+          <div className="nav-social desktop">{socials}</div>
         </Toolbar>
       </AppBar>
-      <Box component="nav">
+      <Box className="drawer" component="nav">
         <Drawer
           variant="temporary"
           open={mobileOpen}

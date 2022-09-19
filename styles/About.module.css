@@ -5,8 +5,9 @@
   align-items: flex-start;
   justify-content: center;
 }
+
 .aboutText {
-  margin: auto;
+  margin: 1rem;
 }
 
 .aboutPhoto {
@@ -26,6 +27,7 @@ a.aboutBtn {
   border-radius: 10px;
   text-decoration: none;
 }
+
 a.aboutBtn:hover {
   padding: 1rem;
   text-decoration: overline;
