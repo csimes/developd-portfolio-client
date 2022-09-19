@@ -92,7 +92,7 @@ const projectItems = {
 
 const Projects: NextPage = () => {
   return (
-    <div className={styles.projectContainer}>
+    <div className={styles.projectContainer} id="projects">
       <h2 className="card-title">Projects</h2>
       <div className={styles.projects}>
         {projectItems.projects.map((project: any) => (

@@ -23,7 +23,7 @@ const navItems = {
     { title: "Home", link: "/" },
     { title: "About", link: "/#about" },
     { title: "Skills", link: "/#skills" },
-    { title: "Projects", link: "/projects" },
+    { title: "Projects", link: "#projects" },
     { title: "Blog", link: "/blog/" },
     { title: "Contact", link: "/contact" },
   ],
