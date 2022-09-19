@@ -100,15 +100,16 @@ const Nav = () => {
           >
             <MenuIcon />
           </IconButton>
-          {/* Remove logo when mobile breakpoint is reached */}
           <Image
-            className="nav-logo desktop"
+            className="nav-logo"
             src="/assets/brandmark-design.png"
             alt="developd logo"
             width="50"
             height="50"
           />
+          {/* Remove tagline when mobile breakpoint is reached */}
           <Typography
+            className="desktop"
             variant="subtitle1"
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
