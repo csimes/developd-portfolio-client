@@ -1,5 +1,6 @@
 .fsFrm {
-  width: 25%;
+  width: 50%;
+  min-width: 40%;
   border: 10px solid #e79d63;
   margin: auto;
   text-align: center;
@@ -20,6 +21,7 @@
   padding: 0.75rem;
   color: #e79d63;
   background-color: #47463b;
+  border-radius: 10px;
 }
 
 .submitBtn:hover {
@@ -27,4 +29,8 @@
   color: #e79d63;
   background-color: #47463b;
   text-decoration: overline;
+}
+
+.formControl {
+  width: 50%;
 }

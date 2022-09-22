@@ -17,7 +17,7 @@ const Contact = () => {
       >
         {/* <Image src="assets/speech-bubble.svg" alt="" id="contact-img" /> */}
         <h2>Contact Form</h2>
-        <p className="contact">
+        <p>
           I&apos;d love to help you bring your vision to life! Let me know how I
           can help below.
         </p>
@@ -30,7 +30,6 @@ const Contact = () => {
               className={styles.formControl}
               id="full-name"
               placeholder="Jane Doe"
-              fullWidth
               required
             />
           </div>
@@ -42,7 +41,6 @@ const Contact = () => {
               className={styles.formControl}
               id="email-address"
               placeholder="email@domain.com"
-              fullWidth
               required
             />
           </div>
@@ -54,7 +52,6 @@ const Contact = () => {
               id="message"
               placeholder="Let's collaborate!"
               multiline
-              fullWidth
               variant="filled"
               rows={3}
               required
@@ -68,11 +65,13 @@ const Contact = () => {
           />
         </fieldset>
         <Button
+          type="submit"
           className={styles.submitBtn}
           value="Send Message"
           variant="contained"
         >
-          Send Message&nbsp;<SendIcon />
+          Send Message&nbsp;
+          <SendIcon />
         </Button>
       </form>
     </div>
