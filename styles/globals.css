@@ -16,11 +16,16 @@ body {
 
 body,
 html,
+button.MuiButton-root,
 a.MuiButton-root,
 .MuiTypography-root,
 div.MuiTypography-root,
 p.MuiTypography-root,
-h6.MuiTypography-root {
+h6.MuiTypography-root,
+label.MuiFormLabel-root,
+input#email-address,
+input#full-name,
+textarea#message {
   font-family: "Montserrat", sans-serif;
 }
 
