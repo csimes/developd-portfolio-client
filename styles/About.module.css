@@ -1,18 +1,18 @@
 .aboutSection,
 .aboutPhoto {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
   justify-content: center;
 }
 
 .aboutText {
-  margin: 1rem;
+  margin: auto;
+  max-width: 70%;
 }
 
 .aboutPhoto {
   border: 6px solid #47463b;
   border-radius: 20px;
+  margin: 2rem;
 }
 
 .selfie {

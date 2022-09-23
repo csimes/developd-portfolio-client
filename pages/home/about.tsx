@@ -36,6 +36,14 @@ const About = () => {
             only) daughter to my wonderful mother, winning bronze medal in my
             4th grade spelling bee, and using my turn signal on a regular basis.
           </p>
+          <Button
+            className={styles.aboutBtn}
+            href="/assets/simes-cherron-resume.pdf"
+            target="_blank"
+            variant="contained"
+          >
+            View Resume
+          </Button>
         </div>
         <div className={styles.aboutPhoto}>
           <Image
@@ -43,19 +51,11 @@ const About = () => {
             src={photo}
             alt="cherron selfie"
             layout="intrinsic"
-            width="450"
-            height="700"
+            width="250"
+            height="400"
           />
         </div>
       </div>
-      <Button
-        className={styles.aboutBtn}
-        href="/assets/simes-cherron-resume.pdf"
-        target="_blank"
-        variant="contained"
-      >
-        View Resume
-      </Button>
     </div>
   );
 };
