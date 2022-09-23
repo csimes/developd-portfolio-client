@@ -1,22 +1,19 @@
 .fsFrm {
-  width: 50%;
-  min-width: 40%;
+  width: 75%;
+  min-width: 60%;
   border: 10px solid #e79d63;
   margin: auto;
   text-align: center;
-  padding: 15px;
   color: #eae7d4;
   background-color: #807e71;
   border-radius: 50px;
-  margin-bottom: 5vh;
-  font-family: "Montserrat";
 }
 
 .fsFrmInputs {
   border: none;
 }
 
-.submitBtn {
+button.submitBtn {
   margin: 1rem;
   padding: 0.75rem;
   color: #e79d63;
@@ -24,7 +21,7 @@
   border-radius: 10px;
 }
 
-.submitBtn:hover {
+button.submitBtn:hover {
   padding: 1rem;
   color: #e79d63;
   background-color: #47463b;
