@@ -17,7 +17,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GithubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
-const drawerWidth = 240;
+const drawerWidth = 500;
 const navItems = {
   items: [
     { title: "Home", link: "/" },

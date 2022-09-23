@@ -16,6 +16,7 @@ body {
   margin: 0;
   color: #47463b;
   background-color: #e9e7d4;
+  /* padding-right: 0px; */
 }
 
 body,
@@ -49,10 +50,7 @@ textarea#message {
 .nav {
   background-color: #e79d63;
   color: #47463b;
-  margin: 0;
   box-shadow: 5px 5px 25px #47463b;
-  height: 100%;
-  padding-right: none;
 }
 
 nav.MuiPaper-root,
