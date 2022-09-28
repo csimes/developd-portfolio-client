@@ -1,12 +1,24 @@
 .projectContainer {
-  margin: 6rem 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 2fr));
+  row-gap: 1.5rem;
+  justify-items: center;
 }
 
-.projects {
+div.projectCard {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 70%;
+  margin: 10px;
+  padding: 10px;
+  border: 5px solid #47463b;
+  background-color: #807e71;
+  color: #e79d63;
+}
+
+.projectImage {
+  margin: 0.4rem 0 0.75rem;
 }
 
 a.projectButton {
@@ -23,13 +35,4 @@ a.projectButton:hover {
   padding: 0.75rem;
   text-decoration: overline;
   background-color: #47463b;
-}
-
-div.projectCard {
-  width: 30%;
-  margin: 10px;
-  padding: 10px;
-  border: 5px solid #47463b;
-  background-color: #807e71;
-  color: #e79d63;
 }

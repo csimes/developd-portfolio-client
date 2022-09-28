@@ -92,20 +92,40 @@ const projectItems = {
 
 const Projects: NextPage = () => {
   return (
-    <div className={styles.projectContainer} id="projects">
+    <div className="container" id="projects">
       <h2 className="card-title">Projects</h2>
-      <div className={styles.projects}>
+      <div className={styles.projectContainer}>
         {projectItems.projects.map((project: any, id: number) => (
           <Card key={id} className={styles.projectCard}>
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
                 {project.name}
               </Typography>
+              {project.image !== "" ? (
+                <Image
+                  className={styles.projectImage}
+                  // component="img"
+                  height="350"
+                  width="450"
+                  src={project.image}
+                  alt=""
+                />
+              ) : (
+                <Image
+                  className={styles.projectImage}
+                  // component="img"
+                  height="350"
+                  width="450"
+                  src="/assets/brandmark-design.png"
+                  alt=""
+                />
+              )}
               <Typography variant="body2" color="#e9e7d4">
                 {project.summary}
               </Typography>
             </CardContent>
             <CardActions>
+              {/* <div className={styles.projectButtonContainer}> */}
               <Button
                 size="small"
                 className={styles.projectButton}
@@ -125,6 +145,7 @@ const Projects: NextPage = () => {
               >
                 Source Code
               </Button>
+              {/* </div> */}
             </CardActions>
           </Card>
         ))}
