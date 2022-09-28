@@ -95,8 +95,8 @@ const Projects: NextPage = () => {
     <div className={styles.projectContainer} id="projects">
       <h2 className="card-title">Projects</h2>
       <div className={styles.projects}>
-        {projectItems.projects.map((project: any) => (
-          <Card key={project} className={styles.projectCard}>
+        {projectItems.projects.map((project: any, id: number) => (
+          <Card key={id} className={styles.projectCard}>
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
                 {project.name}

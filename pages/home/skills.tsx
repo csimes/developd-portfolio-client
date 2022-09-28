@@ -100,8 +100,8 @@ const Skills = () => {
     <div className="container" id="skills">
       <h2 className="card-title">Skills</h2>
       <div className={styles.skillsContainer}>
-        {skillItems.skills.map((skill: any) => (
-          <div className={styles.skillsItem} key={skill}>
+        {skillItems.skills.map((skill: any, id: number) => (
+          <div className={styles.skillsItem} key={id}>
             <Typography variant="subtitle1">{skill.name}</Typography>
             <a href={skill.link} target="_blank" rel="noreferrer">
               <Image

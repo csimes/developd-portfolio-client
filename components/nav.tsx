@@ -75,8 +75,8 @@ const Nav = () => {
         developd | programmed to perfection
       </Typography>
       <List>
-        {navItems.items.map((item: any) => (
-          <ListItem key={item}>
+        {navItems.items.map((item: any, id: number) => (
+          <ListItem key={id}>
             <Link href={item.link}>
               <a className="nav-btn">{item.title}</a>
             </Link>
@@ -117,8 +117,8 @@ const Nav = () => {
             developd | programmed to perfection
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.items.map((item: any) => (
-              <Link href={item.link} key={item}>
+            {navItems.items.map((item: any, id: number) => (
+              <Link href={item.link} key={id}>
                 <a className="nav-btn">{item.title}</a>
               </Link>
             ))}
