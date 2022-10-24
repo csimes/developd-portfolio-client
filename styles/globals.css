@@ -32,7 +32,11 @@ h6.MuiTypography-root,
 label.MuiFormLabel-root,
 input#email-address,
 input#full-name,
-textarea#message {
+textarea#message,
+p,
+a.nav-btn,
+h2,
+h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 100%;
 }
