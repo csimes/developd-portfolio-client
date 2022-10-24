@@ -1,5 +1,5 @@
 import Layout from "../components/layout";
-import "../styles/globals.scss";
+import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fontsource/montserrat/400.css";
 import "@fontsource/montserrat/500.css";
