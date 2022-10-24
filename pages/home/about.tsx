@@ -1,5 +1,5 @@
-import Image from "next/image";
-import { Button } from "@mui/material";
+// import Image from "next/image";
+import { Button, Image } from "react-bootstrap";
 import styles from "../../styles/About.module.css";
 const photo = "/assets/self-photo.jpg";
 
@@ -40,7 +40,6 @@ const About = () => {
             className={styles.aboutBtn}
             href="/assets/simes-cherron-resume.pdf"
             target="_blank"
-            variant="contained"
           >
             View Resume
           </Button>
@@ -50,9 +49,10 @@ const About = () => {
             className={styles.selfie}
             src={photo}
             alt="cherron selfie"
-            layout="intrinsic"
-            width="250"
-            height="400"
+            // layout="intrinsic"
+            // width="250"
+            // height="400"
+            fluid="true"
           />
         </div>
       </div>

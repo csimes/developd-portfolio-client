@@ -9,14 +9,11 @@
   max-width: 70%;
 }
 
-.aboutPhoto {
+.selfie {
+  width: 70%;
   border: 6px solid #47463b;
   border-radius: 20px;
   margin: 2rem;
-}
-
-.selfie {
-  z-index: -1;
 }
 
 a.aboutBtn {
