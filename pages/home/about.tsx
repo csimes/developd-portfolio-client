@@ -5,7 +5,10 @@ const photo = "/assets/self-photo.jpg";
 
 const About = () => {
   return (
-    <div className="container" id="about">
+    <div
+      className="container"
+      id="about"
+    >
       <h2 className="card-title">About Me</h2>
       <div className={styles.aboutSection}>
         <div className={styles.aboutText}>
@@ -49,10 +52,6 @@ const About = () => {
             className={styles.selfie}
             src={photo}
             alt="cherron selfie"
-            // layout="intrinsic"
-            // width="250"
-            // height="400"
-            fluid="true"
           />
         </div>
       </div>
