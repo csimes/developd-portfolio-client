@@ -7,13 +7,15 @@
   color: #eae7d4;
   background-color: #807e71;
   border-radius: 50px;
+  display: flex;
+  flex-direction: column;
 }
 
-.fsFrmInputs {
-  border: none;
+.fsFrm div {
+  margin: 1rem;
 }
 
-button.submitBtn {
+.fsFrm button {
   margin: 1rem;
   padding: 0.75rem;
   color: #e79d63;
@@ -21,7 +23,7 @@ button.submitBtn {
   border-radius: 10px;
 }
 
-button.submitBtn:hover {
+.fsFrm button:hover {
   padding: 1rem;
   color: #e79d63;
   background-color: #47463b;

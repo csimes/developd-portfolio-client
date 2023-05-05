@@ -1,12 +1,21 @@
 import Image from "next/image";
-import { Input, TextField, InputLabel, Button } from "@mui/material";
+import {
+  FormControl,
+  Input,
+  TextField,
+  InputLabel,
+  Button,
+} from "@mui/material";
 
 import SendIcon from "@mui/icons-material/Send";
 import styles from "../../styles/Contact.module.css";
 
 const Contact = () => {
   return (
-    <div className="container" id="contact">
+    <div
+      className="container"
+      id="contact"
+    >
       {/* <FormControl> */}
       <form
         className={styles.fsFrm}
@@ -21,9 +30,14 @@ const Contact = () => {
           I&apos;d love to help you bring your vision to life! Let me know how I
           can help below.
         </p>
-        <fieldset className={styles.fsFrmInputs}>
-          <div className="form-floating">
-            <InputLabel htmlFor="full-name">First and Last Name </InputLabel>
+        <FormControl>
+          <div className={styles.formField}>
+            <InputLabel
+              className={styles.label}
+              htmlFor="full-name"
+            >
+              First and Last Name{" "}
+            </InputLabel>
             <Input
               type="text"
               name="name"
@@ -33,8 +47,13 @@ const Contact = () => {
               required
             />
           </div>
-          <div className="form-floating">
-            <InputLabel htmlFor="email-address">Email Address </InputLabel>
+          <div className={styles.formField}>
+            <InputLabel
+              className={styles.label}
+              htmlFor="email-address"
+            >
+              Email Address{" "}
+            </InputLabel>
             <Input
               type="email"
               name="_replyto"
@@ -44,8 +63,13 @@ const Contact = () => {
               required
             />
           </div>
-          <div className="form-floating">
-            <InputLabel htmlFor="message">Message </InputLabel>
+          <div className={styles.formField}>
+            <InputLabel
+              className={styles.label}
+              htmlFor="message"
+            >
+              Message{" "}
+            </InputLabel>
             <TextField
               name="message"
               className={styles.formControl}
@@ -63,10 +87,9 @@ const Contact = () => {
             id="email-subject"
             value="developd Contact Form Submission"
           />
-        </fieldset>
+        </FormControl>
         <Button
           type="submit"
-          className={styles.submitBtn}
           value="Send Message"
           variant="contained"
         >
