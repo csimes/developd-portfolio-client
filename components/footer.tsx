@@ -9,7 +9,7 @@ const Footer = () => {
         <Link href="/">
           <a>developd</a>
         </Link>
-        &nbsp; &copy; 2022
+        &nbsp; &copy; 2023
       </p>
     </div>
   );
