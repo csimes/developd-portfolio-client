@@ -1,14 +1,9 @@
 import Image from "next/image";
-import {
-  FormControl,
-  Input,
-  TextField,
-  InputLabel,
-  Button,
-} from "@mui/material";
+import { FormControl, TextField, InputLabel, Button } from "@mui/material";
 
 import SendIcon from "@mui/icons-material/Send";
 import styles from "../../styles/Contact.module.css";
+import speechBubble from "../../public/assets/speech-bubble.png";
 
 const Contact = () => {
   return (
@@ -24,69 +19,59 @@ const Contact = () => {
         action="https://formspree.io/f/xnqlqojr"
         method="post"
       >
-        {/* <Image src="assets/speech-bubble.svg" alt="" id="contact-img" /> */}
+        <div className="contact-img">
+          <Image
+            src={speechBubble}
+            alt=""
+            width={350}
+            height={350}
+          />
+        </div>
         <h2>Contact Form</h2>
         <p>
           I&apos;d love to help you bring your vision to life! Let me know how I
           can help below.
         </p>
         <FormControl>
-          <div className={styles.formField}>
-            <InputLabel
-              className={styles.label}
-              htmlFor="full-name"
-            >
-              First and Last Name{" "}
-            </InputLabel>
-            <Input
-              type="text"
-              name="name"
+          <div className={styles.formFields}>
+            <TextField
+              disabled
+              label="Subject"
+              id="email-subject"
+              variant="filled"
+              value="developd Contact Form Submission"
+              multiline
+              rows={2}
+            />
+            <TextField
+              type="name"
+              label="First and Last Name"
               className={styles.formControl}
               id="full-name"
-              placeholder="Jane Doe"
+              defaultValue="Jane Doe"
+              variant="filled"
               required
             />
-          </div>
-          <div className={styles.formField}>
-            <InputLabel
-              className={styles.label}
-              htmlFor="email-address"
-            >
-              Email Address{" "}
-            </InputLabel>
-            <Input
+            <TextField
+              label="Email address"
               type="email"
-              name="_replyto"
               className={styles.formControl}
               id="email-address"
-              placeholder="email@domain.com"
+              defaultValue="email@domain.com"
+              variant="filled"
               required
             />
-          </div>
-          <div className={styles.formField}>
-            <InputLabel
-              className={styles.label}
-              htmlFor="message"
-            >
-              Message{" "}
-            </InputLabel>
             <TextField
-              name="message"
+              label="Message"
               className={styles.formControl}
               id="message"
-              placeholder="Let's collaborate!"
+              defaultValue="Let's collaborate!"
               multiline
               variant="filled"
               rows={3}
               required
             />
           </div>
-          <Input
-            type="hidden"
-            name="_subject"
-            id="email-subject"
-            value="developd Contact Form Submission"
-          />
         </FormControl>
         <Button
           type="submit"
