@@ -71,6 +71,10 @@ a.nav-btn {
   margin: 0.25rem;
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 a.nav-btn:hover {
   padding: 0.75rem;
   text-decoration: overline;
