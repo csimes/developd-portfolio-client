@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 main,
 #__next,
@@ -71,10 +75,6 @@ a.nav-btn {
   margin: 0.25rem;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 a.nav-btn:hover {
   padding: 0.75rem;
   text-decoration: overline;
@@ -100,4 +100,9 @@ a.nav-btn:active {
 .card-title {
   text-transform: uppercase;
   text-decoration: overline;
+}
+
+/* About Section*/
+.selfie {
+  border: 6px solid #47463b;
 }

@@ -46,9 +46,9 @@ const About = () => {
             </button>
           </a>
         </div>
-        <div className="justify-center border-solid border-6 border-medium-orange">
+        <div className="flex justify-center rounded-lg selfie">
           <Image
-            className="m-8 rounded-lg w-1/4"
+            className="m-8 rounded-sm w-1/4"
             width={275}
             height={400}
             src={photo}
