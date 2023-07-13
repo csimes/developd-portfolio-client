@@ -1,6 +1,4 @@
-// import Image from "next/image";
-import { Button, Image } from "react-bootstrap";
-import styles from "../../styles/About.module.css";
+import Image from "next/image";
 const photo = "/assets/self-photo.jpg";
 
 const About = () => {
@@ -9,9 +7,9 @@ const About = () => {
       className="container"
       id="about"
     >
-      <h2 className="card-title">About Me</h2>
-      <div className={styles.aboutSection}>
-        <div className={styles.aboutText}>
+      <h2 className="uppercase overline">About Me</h2>
+      <div className="flex justify-center">
+        <div className="m-auto w-3/4">
           <p>
             As an elder Millennial, I grew up observing the evolution of the
             internet (remember dial-up?), which I&apos;ve always found
@@ -39,17 +37,20 @@ const About = () => {
             only) daughter to my wonderful mother, winning bronze medal in my
             4th grade spelling bee, and using my turn signal on a regular basis.
           </p>
-          <Button
-            className={styles.aboutBtn}
+          <a
             href="/assets/simes-cherron-resume.pdf"
             target="_blank"
           >
-            View Resume
-          </Button>
+            <button className="p-3 text-medium-orange bg-dark-gray text-center no-underline rounded-[10px] hover:overline">
+              View Resume
+            </button>
+          </a>
         </div>
-        <div className={styles.aboutPhoto}>
+        <div className="justify-center border-solid border-6 border-medium-orange">
           <Image
-            className={styles.selfie}
+            className="m-8 rounded-lg w-1/4"
+            width={275}
+            height={400}
             src={photo}
             alt="cherron selfie"
           />
