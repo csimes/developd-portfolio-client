@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FormControl, TextField, InputLabel, Button } from "@mui/material";
+import { FormControl, TextField } from "@mui/material";
 
 import SendIcon from "@mui/icons-material/Send";
 import styles from "../../styles/Contact.module.css";
@@ -13,13 +13,13 @@ const Contact = () => {
     >
       {/* <FormControl> */}
       <form
-        className={styles.fsFrm}
+        className="w-9/12 min-w-[60%] text-center text-soft-white bg-light-gray flex flex-col m-auto rounded-[50px] border-[10px] border-solid border-medium-orange"
         name="simple-contact-form"
         acceptCharset="utf-8"
         action="https://formspree.io/f/xnqlqojr"
         method="post"
       >
-        <div className="contact-img">
+        <div className="contact-img m-4">
           <Image
             src={speechBubble}
             alt=""
@@ -33,7 +33,7 @@ const Contact = () => {
           can help below.
         </p>
         <FormControl>
-          <div className={styles.formFields}>
+          <div className="flex flex-col items-center justify-center">
             <TextField
               disabled
               label="Subject"
@@ -46,7 +46,7 @@ const Contact = () => {
             <TextField
               type="name"
               label="First and Last Name"
-              className={styles.formControl}
+              className="w-[70%]"
               id="full-name"
               defaultValue="Jane Doe"
               variant="filled"
@@ -55,7 +55,7 @@ const Contact = () => {
             <TextField
               label="Email address"
               type="email"
-              className={styles.formControl}
+              className="w-[70%]"
               id="email-address"
               defaultValue="email@domain.com"
               variant="filled"
@@ -63,7 +63,7 @@ const Contact = () => {
             />
             <TextField
               label="Message"
-              className={styles.formControl}
+              className="w-[70%]"
               id="message"
               defaultValue="Let's collaborate!"
               multiline
@@ -73,14 +73,14 @@ const Contact = () => {
             />
           </div>
         </FormControl>
-        <Button
+        <button
+          className="text-medium-orange bg-dark-gray m-4 p-3 rounded-[10px] hover:text-medium-orange hover:bg-dark-gray hover:overline hover:p-4"
           type="submit"
           value="Send Message"
-          variant="contained"
         >
-          Send Message&nbsp;
+          Send Message&nbsp; &nbsp;
           <SendIcon />
-        </Button>
+        </button>
       </form>
     </div>
   );
