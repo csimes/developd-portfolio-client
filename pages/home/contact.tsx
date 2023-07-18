@@ -1,8 +1,5 @@
 import Image from "next/image";
-import { FormControl, TextField } from "@mui/material";
-
-import SendIcon from "@mui/icons-material/Send";
-import styles from "../../styles/Contact.module.css";
+import { Send } from "react-feather";
 import speechBubble from "../../public/assets/speech-bubble.png";
 
 const Contact = () => {
@@ -32,55 +29,46 @@ const Contact = () => {
           I&apos;d love to help you bring your vision to life! Let me know how I
           can help below.
         </p>
-        <FormControl>
+        <div>
           <div className="flex flex-col items-center justify-center">
-            <TextField
+            <input
+              type="text"
               disabled
-              label="Subject"
               id="email-subject"
-              variant="filled"
               value="developd Contact Form Submission"
-              multiline
-              rows={2}
             />
-            <TextField
-              type="name"
-              label="First and Last Name"
+            <input
+              type="text"
               className="w-[70%]"
               id="full-name"
               defaultValue="Jane Doe"
-              variant="filled"
               required
             />
-            <TextField
-              label="Email address"
+            <input
               type="email"
               className="w-[70%]"
               id="email-address"
               defaultValue="email@domain.com"
-              variant="filled"
               required
             />
-            <TextField
-              label="Message"
+            <input
               className="w-[70%]"
               id="message"
               defaultValue="Let's collaborate!"
-              multiline
-              variant="filled"
-              rows={3}
               required
             />
           </div>
-        </FormControl>
-        <button
-          className="text-medium-orange bg-dark-gray m-4 p-3 rounded-[10px] hover:text-medium-orange hover:bg-dark-gray hover:overline hover:p-4"
-          type="submit"
-          value="Send Message"
-        >
-          Send Message&nbsp; &nbsp;
-          <SendIcon />
-        </button>
+        </div>
+        <div className="m-auto">
+          <button
+            className="flex flex-row text-medium-orange bg-dark-gray m-4 p-3 rounded-[10px]  hover:text-medium-orange hover:bg-dark-gray hover:overline hover:p-4"
+            type="submit"
+            value="Send Message"
+          >
+            <p className="m-auto">Send Message &nbsp;</p>
+            <Send />
+          </button>
+        </div>
       </form>
     </div>
   );
