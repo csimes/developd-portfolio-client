@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Typography } from "@mui/material";
-import styles from "../../styles/Skills.module.css";
 const skillItems = {
   skills: [
     {
@@ -97,13 +96,24 @@ const skillItems = {
 };
 const Skills = () => {
   return (
-    <div className="container" id="skills">
+    <div
+      className="container"
+      id="skills"
+    >
       <h2 className="card-title">Skills</h2>
-      <div className={styles.skillsContainer}>
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(350px,1fr))] gap-y-6 justify-items-center">
         {skillItems.skills.map((skill: any, id: number) => (
-          <div className={styles.skillsItem} key={id}>
+          <div
+            className="text-center min-w-[35%] bg-[#47463b85] px-0 py-[5px] rounded-[10px] border-[3px] border-[solid];
+"
+            key={id}
+          >
             <Typography variant="subtitle1">{skill.name}</Typography>
-            <a href={skill.link} target="_blank" rel="noreferrer">
+            <a
+              href={skill.link}
+              target="_blank"
+              rel="noreferrer"
+            >
               <Image
                 src={skill.image}
                 alt={skill.name}
