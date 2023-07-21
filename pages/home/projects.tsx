@@ -144,29 +144,24 @@ const Projects: NextPage = () => {
               </p>
             </div>
             <div>
-              <button className="bg-medium-orange text-soft-white text-center no-underline m-auto p-2 rounded-[10px] hover:overline hover:bg-dark-gray hover:p-3;">
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Deployed Project
-                </a>
-              </button>
-              <br />
-              <button
-                size="small"
-                className="bg-medium-orange text-soft-white text-center no-underline m-auto p-2 rounded-[10px] hover:overline hover:bg-dark-gray hover:p-3;"
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noreferrer"
               >
-                <a
-                  className="text-no-underline"
-                  href={project.sourceCode}
-                  target="_blank"
-                  rel="; noreferrer"
-                >
+                <button className="bg-medium-orange text-dark-gray text-center no-underline m-1 p-2 rounded-[10px]  hover:bg-dark-gray hover:text-soft-white hover:overline">
+                  Deployed Project
+                </button>
+              </a>
+              <a
+                href={project.sourceCode}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <button className="bg-medium-orange text-dark-gray text-center no-underline m-1 p-2 rounded-[10px]  hover:bg-dark-gray hover:text-soft-white hover:overline">
                   Source Code
-                </a>
-              </button>
+                </button>
+              </a>
             </div>
           </div>
         ))}
