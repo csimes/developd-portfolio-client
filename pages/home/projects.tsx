@@ -1,15 +1,7 @@
 import * as React from "react";
 import type { NextPage } from "next";
 import Image from "next/image";
-import {
-  Typography,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Button,
-} from "@mui/material/";
-import styles from "../../styles/Projects.module.css";
+
 const projectItems = {
   projects: [
     {
@@ -119,23 +111,17 @@ const Projects: NextPage = () => {
       id="projects"
     >
       <h2 className="card-title">Projects</h2>
-      <div className={styles.projectContainer}>
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(500px,2fr))] gap-y-6 justify-items-center">
         {projectItems.projects.map((project: any, id: number) => (
-          <Card
+          <div
             key={id}
-            className={styles.projectCard}
+            className="flex flex-col justify-between w-[70%] bg-light-gray text-medium-orange m-2.5 p-2.5 border-[5px] border-solid border-dark-gray"
           >
-            <CardContent>
-              <Typography
-                gutterBottom
-                variant="h5"
-                component="div"
-              >
-                {project.name}
-              </Typography>
+            <div>
+              <h5>{project.name}</h5>
               {project.image !== "" ? (
                 <Image
-                  className={styles.projectImage}
+                  className="mt-[0.4rem] mb-3 mx-0"
                   // component="img"
                   height="350"
                   width="450"
@@ -144,7 +130,7 @@ const Projects: NextPage = () => {
                 />
               ) : (
                 <Image
-                  className={styles.projectImage}
+                  className="mt-[0.4rem] mb-3 mx-0"
                   // component="img"
                   height="350"
                   width="450"
@@ -152,43 +138,37 @@ const Projects: NextPage = () => {
                   alt=""
                 />
               )}
-              <Typography
-                variant="body2"
-                color="#e9e7d4"
-              >
-                {project.summary}
-              </Typography>
-              <Typography
-                variant="body2"
-                color="#e9e7d4"
-              >
+              <p className="text-soft-white">{project.summary}</p>
+              <p className="text-soft-white">
                 <strong>Technologies:</strong> {project.tech}
-              </Typography>
-            </CardContent>
-            <CardActions>
-              {/* <div className={styles.projectButtonContainer}> */}
-              <Button
-                size="small"
-                className={styles.projectButton}
-                href={project.url}
-                target="_blank"
-                variant="contained"
-              >
-                Deployed Project
-              </Button>
+              </p>
+            </div>
+            <div>
+              <button className="bg-medium-orange text-soft-white text-center no-underline m-auto p-2 rounded-[10px] hover:overline hover:bg-dark-gray hover:p-3;">
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Deployed Project
+                </a>
+              </button>
               <br />
-              <Button
+              <button
                 size="small"
-                className={styles.projectButton}
-                href={project.sourceCode}
-                target="_blank"
-                variant="contained"
+                className="bg-medium-orange text-soft-white text-center no-underline m-auto p-2 rounded-[10px] hover:overline hover:bg-dark-gray hover:p-3;"
               >
-                Source Code
-              </Button>
-              {/* </div> */}
-            </CardActions>
-          </Card>
+                <a
+                  className="text-no-underline"
+                  href={project.sourceCode}
+                  target="_blank"
+                  rel="; noreferrer"
+                >
+                  Source Code
+                </a>
+              </button>
+            </div>
+          </div>
         ))}
       </div>
     </div>
