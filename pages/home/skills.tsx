@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Typography } from "@mui/material";
 const skillItems = {
   skills: [
     {
@@ -108,7 +107,7 @@ const Skills = () => {
 "
             key={id}
           >
-            <Typography variant="subtitle1">{skill.name}</Typography>
+            <p>{skill.name}</p>
             <a
               href={skill.link}
               target="_blank"
