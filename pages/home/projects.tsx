@@ -115,7 +115,7 @@ const Projects: NextPage = () => {
         {projectItems.projects.map((project: any, id: number) => (
           <div
             key={id}
-            className="flex flex-col justify-between w-[70%] bg-light-gray text-medium-orange m-2.5 p-2.5 border-[5px] border-solid border-dark-gray"
+            className="flex flex-col justify-between w-[70%] bg-light-gray text-medium-orange m-2.5 p-2.5 border-[5px] border-solid rounded-[10px] border-dark-gray"
           >
             <div>
               <h5>{project.name}</h5>
