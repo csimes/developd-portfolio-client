@@ -12,10 +12,7 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material/";
-import MenuIcon from "@mui/icons-material/Menu";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GithubIcon from "@mui/icons-material/GitHub";
-import InstagramIcon from "@mui/icons-material/Instagram";
+import { GitHub, Linkedin, Instagram, Menu } from "react-feather";
 
 const drawerWidth = 500;
 const navItems = {
@@ -31,29 +28,39 @@ const navItems = {
 
 const Nav = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const darkGray = "color-dark-gray";
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
+  const socialStyle = {
+    color: "#47463b",
+    size: 24,
+  };
+
   const socials = (
     <>
-      <a href="https://github.com/csimes" target="_blank" rel="noreferrer">
-        <GithubIcon htmlColor="#47463b" sx={{ fontSize: 32 }} />
+      <a
+        href="https://github.com/csimes"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <GitHub style={socialStyle} />
       </a>
       <a
         href="https://www.linkedin.com/in/cherron-simes-1b016614b"
         target="_blank"
         rel="noreferrer"
       >
-        <LinkedInIcon htmlColor="#47463b" sx={{ fontSize: 32 }} />
+        <Linkedin style={socialStyle} />
       </a>
       <a
         href="https://www.instagram.com/thelittlecoderthatcould/"
         target="_blank"
         rel="noreferrer"
       >
-        <InstagramIcon htmlColor="#47463b" sx={{ fontSize: 32 }} />
+        <Instagram style={socialStyle} />
       </a>
     </>
   );
@@ -98,7 +105,7 @@ const Nav = () => {
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: "none" } }}
           >
-            <MenuIcon />
+            <Menu />
           </IconButton>
           <Image
             className="nav-logo"
@@ -118,15 +125,21 @@ const Nav = () => {
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.items.map((item: any, id: number) => (
-              <Link href={item.link} key={id}>
+              <Link
+                href={item.link}
+                key={id}
+              >
                 <a className="nav-btn">{item.title}</a>
               </Link>
             ))}
           </Box>
-          <div className="nav-social desktop">{socials}</div>
+          <div className="flex flex-row nav-social desktop">{socials}</div>
         </Toolbar>
       </AppBar>
-      <Box className="drawer" component="nav">
+      <Box
+        className="drawer"
+        component="nav"
+      >
         <Drawer
           variant="temporary"
           open={mobileOpen}
