@@ -2,16 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import {
-  AppBar,
-  Box,
-  Drawer,
-  IconButton,
-  List,
-  ListItem,
-  Toolbar,
-  Typography,
-} from "@mui/material/";
+import { AppBar, Box, Drawer, Toolbar, Typography } from "@mui/material/";
 import { GitHub, Linkedin, Instagram, Menu } from "react-feather";
 
 const drawerWidth = 500;
@@ -28,7 +19,6 @@ const navItems = {
 
 const Nav = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const darkGray = "color-dark-gray";
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -66,10 +56,9 @@ const Nav = () => {
   );
 
   const drawer = (
-    <Box
-      className="nav"
+    <div
+      className="nav text-center"
       onClick={handleDrawerToggle}
-      sx={{ textAlign: "center" }}
     >
       <Image
         className="nav-logo"
@@ -78,35 +67,32 @@ const Nav = () => {
         width="50"
         height="50"
       />
-      <Typography variant="subtitle2">
-        developd | programmed to perfection
-      </Typography>
-      <List>
+      <p>developd | programmed to perfection</p>
+      <ul>
         {navItems.items.map((item: any, id: number) => (
-          <ListItem key={id}>
+          <li key={id}>
             <Link href={item.link}>
               <a className="nav-btn">{item.title}</a>
             </Link>
-          </ListItem>
+          </li>
         ))}
-      </List>
+      </ul>
       <div className="nav-social">{socials}</div>
-    </Box>
+    </div>
   );
 
   return (
     <Box sx={{ display: "flex" }}>
       <AppBar component="nav">
         <Toolbar className="nav">
-          <IconButton
+          <button
+            className="mr-2 sm:hidden"
             color="inherit"
             aria-label="open drawer"
-            edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
           >
             <Menu />
-          </IconButton>
+          </button>
           <Image
             className="nav-logo"
             src="/assets/brandmark-design.png"
@@ -115,14 +101,12 @@ const Nav = () => {
             height="50"
           />
           {/* Remove tagline when mobile breakpoint is reached */}
-          <Typography
-            className="desktop"
-            variant="subtitle1"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+          <p
+            className="desktop grow"
+            // sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
             developd | programmed to perfection
-          </Typography>
+          </p>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.items.map((item: any, id: number) => (
               <Link
