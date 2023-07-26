@@ -7,7 +7,7 @@ const About = () => {
       className="container"
       id="about"
     >
-      <h2 className="uppercase overline">About Me</h2>
+      <h2 className="uppercase overline">Meet Cherron</h2>
       <div className="flex justify-center">
         <div className="m-auto w-3/4">
           <p>
