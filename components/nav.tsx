@@ -1,3 +1,4 @@
+"use client";
 // import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -71,7 +72,10 @@ const Nav = () => {
       <ul>
         {navItems.items.map((item: any, id: number) => (
           <li key={id}>
-            <Link href={item.link}>
+            <Link
+              legacyBehavior
+              href={item.link}
+            >
               <a className="nav-btn">{item.title}</a>
             </Link>
           </li>
@@ -110,6 +114,7 @@ const Nav = () => {
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.items.map((item: any, id: number) => (
               <Link
+                legacyBehavior
                 href={item.link}
                 key={id}
               >
