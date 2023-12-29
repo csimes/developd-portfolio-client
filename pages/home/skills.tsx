@@ -114,6 +114,7 @@ const Skills = () => {
               rel="noreferrer"
             >
               <Image
+                className="m-auto"
                 src={skill.image}
                 alt={skill.name}
                 width="75"
