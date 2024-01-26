@@ -31,14 +31,17 @@ const About = () => {
             beat, or practicing the fine art of using a turn signal. (Seriously,
             I&apos;m a pro.)
           </p>
-          <a
-            href="/assets/simes-cherron-resume.pdf"
-            target="_blank"
-          >
-            <button className="p-3 text-medium-orange bg-dark-gray text-center no-underline rounded-[10px] hover:overline">
-              View Resume
-            </button>
-          </a>
+          <div>
+            {" "}
+            <a
+              href="/assets/simes-cherron-resume.pdf"
+              target="_blank"
+            >
+              <button className="p-3 text-medium-orange bg-dark-gray text-center no-underline rounded-[10px] hover:overline">
+                View Resume
+              </button>
+            </a>
+          </div>
         </div>
       </div>
       <div className="md:w-1/2 flex justify-center">
