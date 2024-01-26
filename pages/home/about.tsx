@@ -44,8 +44,8 @@ const About = () => {
       <div className="md:w-1/2 flex justify-center">
         <Image
           className="m-8 rounded-full border-4 border-dark-gray"
-          width={275}
-          height={275}
+          width={450}
+          height={175}
           src={photo}
           alt="cherron selfie"
         />
