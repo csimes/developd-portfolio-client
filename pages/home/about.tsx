@@ -4,38 +4,32 @@ const photo = "/assets/self-photo.jpg";
 const About = () => {
   return (
     <div
-      className="container"
+      className="container flex flex-col md:flex-row"
       id="about"
     >
-      <h2 className="uppercase overline">Meet Cherron</h2>
-      <div className="flex justify-center">
-        <div className="m-auto w-3/4">
+      <div className="md:w-1/2">
+        <h2 className="uppercase overline">Meet Cherron</h2>
+        <div>
           <p>
-            As an elder Millennial, I grew up observing the evolution of the
-            internet (remember dial-up?), which I&apos;ve always found
-            fascinating. I began my web development journey in April 2018, and
-            I&apos;ve been working to hone my skills ever since. I graduated
-            Eleven Fifty Academy&apos;s Web Development bootcamp in October
-            2021, and I&apos;m always working on a project while I search for
-            the right junior developer role for me.
+            Dial-up survivor. Eleven Fifty alumni. Project whisperer.
+            That&apos;s me. A slightly caffeinated web dev with a passion for
+            pixels and problem-solving, forged in the crucible of curiosity.
+            I&apos;m passionate about building beautiful, functional websites
+            that drive results.
           </p>
           <p>
-            I&apos;m a highly motivated web developer with proficiency in
-            front-end technologies and stellar project management skills who is
-            eager to contribute to company efforts through hard work, effective
-            communication, and creative problem-solving. What I lack in
-            knowledge, I make up for in grit and the ability to learn new things
-            at an alarmingly fast rate.
+            I combine frontend mastery with sharp project management skills and
+            a relentless drive to learn. My eagerness to contribute shines
+            through in everything I do, from meticulous communication to
+            creative problem-solving. Javascript isn&apos;t my only language; I
+            also speak fluently in collaboration and innovation. Ready to see
+            what I can do for your team? Let&apos;s talk.
           </p>
           <p>
-            When I&apos;m not changing the world one line of code at a time, I
-            enjoy listening to music - ranging from classic rock to EDM or
-            watching some of my favorite shows - like Supernatural or Sherlock.
-          </p>
-          <p>
-            Some of my most notable achievements include being the best (and
-            only) daughter to my wonderful mother, winning bronze medal in my
-            4th grade spelling bee, and using my turn signal on a regular basis.
+            When I&apos;m not weaving digital tapestries, you&apos;ll find me
+            lost in a Supernatural marathon, rocking out to anything with a
+            beat, or practicing the fine art of using a turn signal. (Seriously,
+            I&apos;m a pro.)
           </p>
           <a
             href="/assets/simes-cherron-resume.pdf"
@@ -46,15 +40,15 @@ const About = () => {
             </button>
           </a>
         </div>
-        <div className="flex justify-center rounded-lg selfie">
-          <Image
-            className="m-8 rounded-sm w-1/4"
-            width={275}
-            height={400}
-            src={photo}
-            alt="cherron selfie"
-          />
-        </div>
+      </div>
+      <div className="md:w-1/2 flex justify-center">
+        <Image
+          className="m-8 rounded-full border-4 border-dark-gray"
+          width={275}
+          height={275}
+          src={photo}
+          alt="cherron selfie"
+        />
       </div>
     </div>
   );
