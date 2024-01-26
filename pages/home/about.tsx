@@ -1,5 +1,5 @@
 import Image from "next/image";
-const photo = "/assets/self-photo.jpg";
+const photo = "/assets/selfie.jpg";
 
 const About = () => {
   return (
