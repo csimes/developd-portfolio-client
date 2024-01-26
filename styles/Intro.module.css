@@ -6,6 +6,12 @@
   margin: 4rem 0;
 }
 
+@media (max-width: 768px) {
+  .heroWrapper {
+    border-radius: 0;
+  }
+}
+
 .imageWrapper {
   z-index: 1;
   position: absolute;
@@ -26,6 +32,12 @@
   text-align: center;
   align-items: center;
   margin: 2rem;
+}
+
+@media (max-width: 768px) {
+  .heroContent {
+    margin: 1rem;
+  }
 }
 
 .name {
