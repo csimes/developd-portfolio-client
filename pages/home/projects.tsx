@@ -110,7 +110,7 @@ const Projects: NextPage = () => {
       className="container"
       id="projects"
     >
-      <h2 className="card-title">Projects</h2>
+      <h2 className="text-uppercase text-overline">Projects</h2>
       <div className="grid grid-cols-[repeat(auto-fill,minmax(500px,2fr))] gap-y-6 justify-items-center">
         {projectItems.projects.map((project: any, id: number) => (
           <div
