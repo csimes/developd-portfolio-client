@@ -5,19 +5,34 @@ import Link from "next/link";
 import { useState } from "react";
 import { GitHub, Linkedin, Instagram, Menu } from "react-feather";
 
-const drawerWidth = 500;
-const navItems = {
-  items: [
-    { title: "Home", link: "/" },
-    { title: "About", link: "/#about" },
-    { title: "Skills", link: "/#skills" },
-    { title: "Projects", link: "#projects" },
-    { title: "Blog", link: "/blog/" },
-    { title: "Contact", link: "/#contact" },
-  ],
-};
-
 const Nav = () => {
+  const drawerWidth = 500;
+
+  const navItems = {
+    items: [
+      { title: "Home", link: "/" },
+      { title: "About", link: "/#about" },
+      { title: "Skills", link: "/#skills" },
+      { title: "Projects", link: "#projects" },
+      { title: "Blog", link: "/blog/" },
+      { title: "Contact", link: "/#contact" },
+    ],
+  };
+  const nav = (
+    <ul className="flex flex-row p-4 mt-4 md:space-x-8 md:mt-0">
+      {navItems.items.map((item: any, id: number) => (
+        <li key={id}>
+          <Link
+            legacyBehavior
+            href={item.link}
+          >
+            <a className="text-dark-gray text-decoration-none">{item.title}</a>
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
@@ -30,7 +45,7 @@ const Nav = () => {
   };
 
   const socials = (
-    <>
+    <div className="flex flex-row justify-between">
       <a
         href="https://github.com/csimes"
         target="_blank"
@@ -52,12 +67,12 @@ const Nav = () => {
       >
         <Instagram style={socialStyle} />
       </a>
-    </>
+    </div>
   );
 
   const drawer = (
     <div
-      className="nav text-center"
+      className="text-center"
       onClick={handleDrawerToggle}
     >
       <Image
@@ -68,42 +83,27 @@ const Nav = () => {
         height="50"
       />
       <p>developd | programmed to perfection</p>
-      <ul>
-        {navItems.items.map((item: any, id: number) => (
-          <li key={id}>
-            <Link
-              legacyBehavior
-              href={item.link}
-            >
-              <a className="nav-btn">{item.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <div className="nav-social">{socials}</div>
+      {nav}
+      <div>{socials}</div>
     </div>
   );
 
   return (
-    <nav className="bg-medium-orange dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav className="bg-medium-orange dark:bg-gray-900 sticky top-0 z-10">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between m-auto px-6">
         <a
-          href="https://flowbite.com/"
-          className="flex items-center space-x-3 rtl:space-x-reverse"
+          href="https://www.developdbycherron.com"
+          className="flex items-center"
         >
           <Image
-            src="https://flowbite.com/docs/images/logo.svg"
-            width={100}
+            src="/assets/transparent.png"
+            width={200}
             height={100}
             className="h-8"
             alt="developd logo"
           />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            Flowbite
-          </span>
         </a>
-        <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <div className="nav-social">{socials}</div>
+        <div>
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"
@@ -133,41 +133,8 @@ const Nav = () => {
           className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
           id="navbar-sticky"
         >
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
-                aria-current="page"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                Services
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
+          {nav}
+          <div>{socials}</div>
         </div>
       </div>
     </nav>
