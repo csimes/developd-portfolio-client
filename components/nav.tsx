@@ -6,8 +6,6 @@ import { useState } from "react";
 import { GitHub, Linkedin, Instagram, Menu } from "react-feather";
 
 const Nav = () => {
-  const drawerWidth = 500;
-
   const navItems = {
     items: [
       { title: "Home", link: "/" },
@@ -19,18 +17,22 @@ const Nav = () => {
     ],
   };
   const nav = (
-    <ul className="flex flex-row p-4 mt-4 md:space-x-8 md:mt-0">
-      {navItems.items.map((item: any, id: number) => (
-        <li key={id}>
-          <Link
-            legacyBehavior
-            href={item.link}
-          >
-            <a className="text-dark-gray text-decoration-none">{item.title}</a>
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <div className=" sm:block">
+      <ul className="flex flex-row p-4 mt-4 md:space-x-8 md:mt-0">
+        {navItems.items.map((item: any, id: number) => (
+          <li key={id}>
+            <Link
+              legacyBehavior
+              href={item.link}
+            >
+              <a className="text-dark-gray text-decoration-none hover:text-soft-white">
+                {item.title}
+              </a>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -45,8 +47,9 @@ const Nav = () => {
   };
 
   const socials = (
-    <div className="flex flex-row justify-between">
+    <div className="flex flex-row m-3">
       <a
+        className="m-2"
         href="https://github.com/csimes"
         target="_blank"
         rel="noreferrer"
@@ -54,6 +57,7 @@ const Nav = () => {
         <GitHub style={socialStyle} />
       </a>
       <a
+        className="m-2"
         href="https://www.linkedin.com/in/cherron-simes-1b016614b"
         target="_blank"
         rel="noreferrer"
@@ -61,6 +65,7 @@ const Nav = () => {
         <Linkedin style={socialStyle} />
       </a>
       <a
+        className="m-2"
         href="https://www.instagram.com/thelittlecoderthatcould/"
         target="_blank"
         rel="noreferrer"
@@ -82,59 +87,51 @@ const Nav = () => {
         width="50"
         height="50"
       />
-      <p>developd | programmed to perfection</p>
+      {/* Remove tagline when mobile breakpoint is reached */}
+      <p className="block grow sm:hidden">
+        developd | programmed to perfection
+      </p>
       {nav}
       <div>{socials}</div>
     </div>
   );
 
   return (
-    <nav className="bg-medium-orange dark:bg-gray-900 sticky top-0 z-10">
+    <nav className="m-0 bg-medium-orange dark:bg-gray-900 sticky top-0 z-10">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between m-auto px-6">
-        <a
-          href="https://www.developdbycherron.com"
-          className="flex items-center"
+        <button
+          data-collapse-toggle="navbar-sticky"
+          type="button"
+          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="navbar-sticky"
+          aria-expanded="false"
+          onClick={handleDrawerToggle}
         >
-          <Image
-            src="/assets/transparent.png"
-            width={200}
-            height={100}
-            className="h-8"
-            alt="developd logo"
-          />
-        </a>
-        <div>
-          <button
-            data-collapse-toggle="navbar-sticky"
-            type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-            aria-controls="navbar-sticky"
-            aria-expanded="false"
-          >
-            <span className="sr-only">Open main menu</span>
-            <svg
-              className="w-5 h-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 17 14"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M1 1h15M1 7h15M1 13h15"
-              />
-            </svg>
-          </button>
-        </div>
+          <Menu />
+        </button>
+        <Image
+          src="/assets/transparent.png"
+          width={200}
+          height={200}
+          alt="developd logo"
+        />
+        <div></div>
         <div
           className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
           id="navbar-sticky"
         >
           {nav}
-          <div>{socials}</div>
+          {socials}
+          <div
+            className="block sm:hidden w-500"
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+            ModalProps={{
+              keepMounted: true, // Better open performance on mobile.
+            }}
+          >
+            {/* {drawer} */}
+          </div>
         </div>
       </div>
     </nav>
