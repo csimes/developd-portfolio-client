@@ -9,7 +9,7 @@ const Intro = () => {
       <Image
         priority
         src={header}
-        layout="fill"
+        fill
         alt="chicago skyline"
       />
       <div className="relative flex flex-col text-center align-items-center m-8 sm:mr-4">
