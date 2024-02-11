@@ -1,10 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* removes social icons when breakpoint is hit; this prevents nav from wrapping elements too much and covering the hero image*/
-@media only screen and (max-width: 1000px) {
-  div.desktop {
-    display: none;
-  }
-}
