@@ -2,6 +2,7 @@ import "./globals.css";
 import { Metadata } from "next";
 import NextScript from "next/script";
 import Script from "next/script";
+import { Providers } from "./providers";
 
 import Nav from "../components/nav";
 import Footer from "../components/footer";
@@ -26,9 +27,8 @@ const RootLayout = ({
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <Nav />
-        {children}
-        <Footer />
+        <Providers>{children}</Providers>
+
         <noscript
           dangerouslySetInnerHTML={{
             __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXX"
