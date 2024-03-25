@@ -5,7 +5,7 @@ const logo = "/assets/transparent.png";
 const Intro = () => {
   return (
     <div className="sticky overflow-hidden rounded-b-xl text-dark-gray">
-      <div className="z-10 absolute h-full w-full bg-gradient-to-b from-medium-orange to-light-gray"></div>
+      <div className="z-15 absolute h-full w-full bg-gradient-to-b from-medium-orange to-light-gray"></div>
       <Image
         priority
         src={header}
@@ -17,7 +17,6 @@ const Intro = () => {
           priority
           src={logo}
           alt="developd logo"
-          layout="intrinsic"
           width="380"
           height="100"
         />
