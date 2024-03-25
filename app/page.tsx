@@ -1,18 +1,22 @@
 import type { NextPage } from "next";
-import Intro from "../pages/home/intro";
-import About from "../pages/home/about";
-import Skills from "../pages/home/skills";
-import Projects from "../pages/home/projects";
-import Contact from "../pages/home/contact";
+import Intro from "./home/intro";
+import About from "./home/about";
+import Skills from "./home/skills";
+import Projects from "./home/projects";
+import Contact from "./home/contact";
+import Nav from "../components/nav";
+import Footer from "../components/footer";
 
 const Home: NextPage = () => {
   return (
     <div>
+      <Nav />
       <Intro />
       <About />
       <Skills />
       <Projects />
       <Contact />
+      <Footer />
     </div>
   );
 };
