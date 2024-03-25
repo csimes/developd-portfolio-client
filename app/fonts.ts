@@ -3,7 +3,7 @@ import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-rubik",
+  variable: "--font-montserrat",
 });
 
 export const fonts = {
