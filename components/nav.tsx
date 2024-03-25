@@ -1,9 +1,9 @@
 "use client";
 // import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 import { GitHub, Linkedin, Instagram, Menu } from "react-feather";
+import { Link } from "@chakra-ui/next-js";
 
 const Nav = () => {
   const navItems = {
@@ -124,11 +124,11 @@ const Nav = () => {
           {socials}
           <div
             className="block sm:hidden w-500"
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
+            // open={mobileOpen}
+            // onClose={handleDrawerToggle}
+            // ModalProps={{
+            //   keepMounted: true, // Better open performance on mobile.
+            // }}
           >
             {/* {drawer} */}
           </div>
