@@ -7,7 +7,8 @@ import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "developd | programmed to perfection.",
-  // description: "Welcome to Next.js",
+  description:
+    "Web Developer | Cherron Simes - I build performant and user-friendly web applications. Check out my portfolio to see my latest projects!",
 };
 
 const montserrat = Montserrat({
