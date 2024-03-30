@@ -22,12 +22,10 @@ const Nav = () => {
         {navItems.items.map((item: any, id: number) => (
           <li key={id}>
             <Link
-              legacyBehavior
+              className="text-dark-gray text-decoration-none  hover:text-soft-white"
               href={item.link}
             >
-              <a className="text-dark-gray text-decoration-none hover:text-soft-white">
-                {item.title}
-              </a>
+              {item.title}
             </Link>
           </li>
         ))}
