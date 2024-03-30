@@ -1,9 +1,21 @@
 "use client";
-// import React from "react";
+import React from "react";
+import {
+  useDisclosure,
+  Button,
+  Drawer,
+  DrawerBody,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  DrawerHeader,
+  DrawerFooter,
+} from "@chakra-ui/react";
 import Image from "next/image";
 import { useState } from "react";
 import { GitHub, Linkedin, Instagram, Menu } from "react-feather";
 import { Link } from "@chakra-ui/next-js";
+import NextLink from "next/link";
 
 const Nav = () => {
   const navItems = {
@@ -22,6 +34,7 @@ const Nav = () => {
         {navItems.items.map((item: any, id: number) => (
           <li key={id}>
             <Link
+              as={NextLink}
               className="text-dark-gray text-decoration-none  hover:text-soft-white"
               href={item.link}
             >
@@ -33,11 +46,14 @@ const Nav = () => {
     </div>
   );
 
-  const [mobileOpen, setMobileOpen] = useState(false);
-
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
+  const transparent_logo = (
+    <Image
+      src="/assets/transparent.png"
+      width={200}
+      height={200}
+      alt="developd logo"
+    />
+  );
 
   const socialStyle = {
     color: "#47463b",
@@ -72,26 +88,34 @@ const Nav = () => {
       </a>
     </div>
   );
+  /* Drawer (smaller screen sizes) */
+
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = React.useRef();
 
   const drawer = (
-    <div
-      className="text-center"
-      onClick={handleDrawerToggle}
-    >
-      <Image
-        className="nav-logo"
-        src="/assets/brandmark-design.png"
-        alt="developd logo"
-        width="50"
-        height="50"
-      />
-      {/* Remove tagline when mobile breakpoint is reached */}
-      <p className="block grow sm:hidden">
-        developd | programmed to perfection
-      </p>
-      {nav}
-      <div>{socials}</div>
-    </div>
+    <>
+      <Drawer
+        isOpen={isOpen}
+        placement="left"
+        onClose={onClose}
+      >
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader>{transparent_logo}</DrawerHeader>
+
+          <DrawerBody></DrawerBody>
+
+          <DrawerFooter></DrawerFooter>
+        </DrawerContent>
+      </Drawer>
+    </>
   );
 
   return (
@@ -103,16 +127,11 @@ const Nav = () => {
           className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
           aria-controls="navbar-sticky"
           aria-expanded="false"
-          onClick={handleDrawerToggle}
+          onClick={onOpen}
         >
           <Menu />
         </button>
-        <Image
-          src="/assets/transparent.png"
-          width={200}
-          height={200}
-          alt="developd logo"
-        />
+        {transparent_logo}
         <div></div>
         <div
           className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
@@ -120,16 +139,7 @@ const Nav = () => {
         >
           {nav}
           {socials}
-          <div
-            className="block sm:hidden w-500"
-            // open={mobileOpen}
-            // onClose={handleDrawerToggle}
-            // ModalProps={{
-            //   keepMounted: true, // Better open performance on mobile.
-            // }}
-          >
-            {/* {drawer} */}
-          </div>
+          <div className="block w-500">{drawer}</div>
         </div>
       </div>
     </nav>
