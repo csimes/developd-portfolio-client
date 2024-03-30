@@ -1,21 +1,18 @@
 import "./globals.css";
+import { Montserrat } from "next/font/google";
+import { Providers } from "./providers";
 import { Metadata } from "next";
 import NextScript from "next/script";
 import Script from "next/script";
-import { Providers } from "./providers";
-
-import Nav from "../components/nav";
-import Footer from "../components/footer";
-import { Montserrat } from "next/font/google";
-
-import "bootstrap/dist/css/bootstrap.min.css";
-
-const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "developd | programmed to perfection.",
   // description: "Welcome to Next.js",
 };
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+});
 
 const RootLayout = ({
   // Layouts must accept a children prop.
