@@ -30,7 +30,7 @@ const Nav = () => {
   };
   const nav = (
     <div className=" sm:block">
-      <ul className="flex flex-row p-4 mt-4 md:space-x-8 md:mt-0">
+      <ul className="p-4 mt-4 flex sm:flex-col md:flex-row md:space-x-8 md:mt-0">
         {navItems.items.map((item: any, id: number) => (
           <li key={id}>
             <Link
@@ -115,7 +115,7 @@ const Nav = () => {
             <p className="block grow sm:hidden">
               developd | programmed to perfection
             </p>
-            {nav}
+            <div className="text-center flex flex-col">{nav}</div>
           </DrawerBody>
 
           <DrawerFooter>{socials}</DrawerFooter>
