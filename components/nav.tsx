@@ -110,9 +110,15 @@ const Nav = () => {
           <DrawerCloseButton />
           <DrawerHeader>{transparent_logo}</DrawerHeader>
 
-          <DrawerBody></DrawerBody>
+          <DrawerBody>
+            {/* Remove tagline when mobile breakpoint is reached */}
+            <p className="block grow sm:hidden">
+              developd | programmed to perfection
+            </p>
+            {nav}
+          </DrawerBody>
 
-          <DrawerFooter></DrawerFooter>
+          <DrawerFooter>{socials}</DrawerFooter>
         </DrawerContent>
       </Drawer>
     </>
