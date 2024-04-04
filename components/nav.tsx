@@ -61,7 +61,7 @@ const Nav = () => {
   };
 
   const socials = (
-    <div className="flex flex-row m-3">
+    <div className="flex sm:m-auto flex-row m-3">
       <a
         className="m-2"
         href="https://github.com/csimes"
