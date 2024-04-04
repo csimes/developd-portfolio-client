@@ -48,6 +48,7 @@ const Nav = () => {
 
   const transparent_logo = (
     <Image
+      className="m-auto"
       src="/assets/transparent.png"
       width={200}
       height={200}
@@ -89,18 +90,13 @@ const Nav = () => {
     </div>
   );
   /* Drawer (smaller screen sizes) */
-
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
-
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = React.useRef();
+ 
 
   const drawer = (
     <>
       <Drawer
+        closeOnOverlayClick
         isOpen={isOpen}
         placement="left"
         onClose={onClose}
@@ -145,7 +141,7 @@ const Nav = () => {
         >
           {nav}
           {socials}
-          <div className="block w-500">{drawer}</div>
+          {drawer}
         </div>
       </div>
     </nav>
