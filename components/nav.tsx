@@ -30,7 +30,7 @@ const Nav = () => {
   };
   const nav = (
     <div className=" sm:block">
-      <ul className="p-4 mt-4 flex sm:flex-col md:flex-row md:space-x-8 md:mt-0">
+      <ul className="p-4 mt-4 flex md:flex-row flex-col md:space-x-8 md:mt-0">
         {navItems.items.map((item: any, id: number) => (
           <li key={id}>
             <Link
@@ -91,7 +91,6 @@ const Nav = () => {
   );
   /* Drawer (smaller screen sizes) */
   const { isOpen, onOpen, onClose } = useDisclosure();
- 
 
   const drawer = (
     <>
@@ -111,7 +110,7 @@ const Nav = () => {
             <p className="block grow sm:hidden">
               developd | programmed to perfection
             </p>
-            <div className="text-center flex flex-col">{nav}</div>
+            {nav}
           </DrawerBody>
 
           <DrawerFooter>{socials}</DrawerFooter>
