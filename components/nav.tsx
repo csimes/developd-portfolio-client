@@ -29,8 +29,8 @@ const Nav = () => {
     ],
   };
   const nav = (
-    <div className=" sm:block">
-      <ul className="p-4 mt-4 flex md:flex-row flex-col md:space-x-8 md:mt-0">
+    <div>
+      <ul className="px-6 flex md:flex-row sm:flex-col md:space-x-4 text-center">
         {navItems.items.map((item: any, id: number) => (
           <li key={id}>
             <Link
@@ -62,7 +62,7 @@ const Nav = () => {
   };
 
   const socials = (
-    <div className="flex sm:m-auto flex-row m-3">
+    <div className="flex m-auto flex-row">
       <a
         className="m-2"
         href="https://github.com/csimes"
@@ -105,13 +105,7 @@ const Nav = () => {
           <DrawerCloseButton />
           <DrawerHeader>{transparent_logo}</DrawerHeader>
 
-          <DrawerBody>
-            {/* Remove tagline when mobile breakpoint is reached */}
-            <p className="block grow sm:hidden">
-              developd | programmed to perfection
-            </p>
-            {nav}
-          </DrawerBody>
+          <DrawerBody>{nav}</DrawerBody>
 
           <DrawerFooter>{socials}</DrawerFooter>
         </DrawerContent>
@@ -120,8 +114,8 @@ const Nav = () => {
   );
 
   return (
-    <nav className="m-0 bg-medium-orange dark:bg-gray-900 sticky top-0 z-10">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between m-auto px-6">
+    <nav className="m-auto p-4 bg-medium-orange dark:bg-gray-900 sticky top-0 z-10">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between">
         <button
           data-collapse-toggle="navbar-sticky"
           type="button"
