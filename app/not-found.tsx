@@ -25,7 +25,9 @@ export default function NotFound() {
         >
           Something went wrong
         </Heading>
-        <Text mb={8}>Looks like this page doesn't exist or was removed.</Text>
+        <Text mb={8}>
+          Looks like this page doesn&apos;t exist or was removed.
+        </Text>
         <Button
           size="lg"
           as="a"
