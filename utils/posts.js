@@ -14,6 +14,8 @@ const getPostMetadata = (basePath) => {
       title: matterResult.data.title,
       date: matterResult.data.date,
       slug: filename.replace(".md", ""),
+      description: matterResult.data.description,
+      tags: matterResult.data.tags,
     };
   });
   return posts;
