@@ -31,13 +31,13 @@ const Nav = () => {
     <ul className="flex md:flex-row sm:flex-col md:space-x-4 text-center">
       {navItems.items.map((item, id) => (
         <li key={id}>
-          <Link
-            as={NextLink}
-            className="text-dark-gray text-decoration-none hover:text-soft-white"
+          <a
+            // as={NextLink}
+            className="font-bold text-dark-gray hover:text-soft-white hover:overline"
             href={item.link}
           >
             {item.title}
-          </Link>
+          </a>
         </li>
       ))}
     </ul>
@@ -103,7 +103,7 @@ const Nav = () => {
   );
 
   return (
-    <nav className="sticky top-0 bg-medium-orange dark:bg-gray-900 z-10 h-24">
+    <nav className="sticky top-0 bg-medium-orange dark:bg-gray-900 z-20 h-24">
       <div className="max-w-screen-2xl mx-auto px-4 h-full flex items-center justify-between">
         <div className="flex items-center">{transparent_logo}</div>
         <div className="hidden md:flex items-center space-x-8">
