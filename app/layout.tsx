@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import NextScript from "next/script";
 import Script from "next/script";
 import Nav from "../components/nav";
+import Footer from "../components/footer";
 
 export const metadata: Metadata = {
   title: "developd | programmed to perfection.",
@@ -29,6 +30,7 @@ const RootLayout = ({
         <Providers>
           <Nav />
           {children}
+          <Footer />
         </Providers>
 
         <noscript

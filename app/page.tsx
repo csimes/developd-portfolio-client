@@ -4,7 +4,6 @@ import About from "./home/about";
 import Skills from "./home/skills";
 import Projects from "./home/projects";
 import Contact from "./home/contact";
-import Nav from "../components/nav";
 import Footer from "../components/footer";
 
 const Home: NextPage = () => {
@@ -15,7 +14,6 @@ const Home: NextPage = () => {
       <Skills />
       <Projects />
       <Contact />
-      <Footer />
     </div>
   );
 };
