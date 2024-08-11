@@ -17,19 +17,13 @@ const montserrat = Montserrat({
   subsets: ["latin"],
 });
 
-const RootLayout = ({
-  // Layouts must accept a children prop.
-  // This will be populated with nested layouts or pages
-  children,
-}: {
-  children: React.ReactNode;
-}) => {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
+      <body className={`${montserrat.className} flex flex-col min-h-screen`}>
         <Providers>
           <Nav />
-          {children}
+          <main className="flex-grow pt-16 pb-20">{children}</main>
           <Footer />
         </Providers>
 

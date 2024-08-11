@@ -2,18 +2,18 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-medium-orange text-soft-white text-center py-6">
+    <footer className="bg-medium-orange text-soft-white text-center py-4">
       <p className="m-auto">
         programmed to perfection by&nbsp;{" "}
         <Link
-          legacyBehavior
           href="/"
+          className="no-underline text-dark-gray"
         >
-          <a className="no-underline text-dark-gray">developd</a>
+          developd
         </Link>
         &nbsp; &copy; 2023
       </p>
-    </div>
+    </footer>
   );
 };
 
