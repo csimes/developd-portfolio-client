@@ -4,6 +4,7 @@ import { Providers } from "./providers";
 import { Metadata } from "next";
 import NextScript from "next/script";
 import Script from "next/script";
+import Nav from "../components/nav";
 
 export const metadata: Metadata = {
   title: "developd | programmed to perfection.",
@@ -25,7 +26,10 @@ const RootLayout = ({
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Nav />
+          {children}
+        </Providers>
 
         <noscript
           dangerouslySetInnerHTML={{

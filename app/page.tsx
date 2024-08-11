@@ -10,7 +10,6 @@ import Footer from "../components/footer";
 const Home: NextPage = () => {
   return (
     <div>
-      <Nav />
       <Intro />
       <About />
       <Skills />
