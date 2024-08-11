@@ -24,6 +24,7 @@ const Posts = (props: any) => {
 
   return (
     <div>
+      <h2>{title}</h2>
       <h2>{date}</h2>
       <Markdown>{post.content}</Markdown>
     </div>
