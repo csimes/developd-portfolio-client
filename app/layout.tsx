@@ -23,7 +23,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <body className={`${montserrat.className} flex flex-col min-h-screen`}>
         <Providers>
           <Nav />
-          <main className="flex-grow pt-16 pb-20">{children}</main>
+          <main className="flex-grow">{children}</main>
           <Footer />
         </Providers>
 
