@@ -67,7 +67,7 @@ const Skills: React.FC = () => {
       id="skills"
     >
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-dark-gray mb-8 uppercase tracking-wider overline">
+        <h2 className="text-3xl md:text-4xl font-bold text-dark-gray mb-8 uppercase tracking-wider border-t-4 border-medium-orange pt-4 inline-block">
           Skills
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

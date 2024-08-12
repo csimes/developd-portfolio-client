@@ -22,7 +22,7 @@ const About = () => {
       </div>
 
       <div className="container mx-auto max-w-6xl relative z-10">
-        <h2 className="overline text-3xl md:text-4xl font-bold text-dark-gray mb-8 uppercase tracking-wider">
+        <h2 className="border-t-4 border-medium-orange pt-4 inline-block text-3xl md:text-4xl font-bold text-dark-gray mb-8 uppercase tracking-wider">
           Meet Cherron
         </h2>
         <div className="flex flex-col md:flex-row items-center md:items-start gap-12">
