@@ -1,130 +1,87 @@
-import Image from "next/image";
-const skillItems = {
-  skills: [
+import React from "react";
+import { Code, Server, Palette, Terminal, LucideIcon } from "lucide-react";
+
+interface SkillCategoryProps {
+  title: string;
+  skills: string[];
+  icon: LucideIcon;
+}
+
+const SkillCategory: React.FC<SkillCategoryProps> = ({
+  title,
+  skills,
+  icon: Icon,
+}) => (
+  <div className="bg-light-gray p-6 rounded-lg shadow-md">
+    <div className="flex items-center mb-4">
+      <Icon className="w-6 h-6 mr-2 text-medium-orange" />
+      <h3 className="text-xl font-semibold text-dark-gray">{title}</h3>
+    </div>
+    <ul className="space-y-2">
+      {skills.map((skill, index) => (
+        <li
+          key={index}
+          className="text-soft-white"
+        >
+          {skill}
+        </li>
+      ))}
+    </ul>
+  </div>
+);
+
+const Skills: React.FC = () => {
+  const skillCategories: SkillCategoryProps[] = [
     {
-      name: "Javascript",
-      link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-      image:
-        "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg",
+      title: "Frontend",
+      icon: Palette,
+      skills: [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "React",
+        "Next.js",
+        "Tailwind CSS",
+      ],
     },
     {
-      name: "Typescript",
-      link: "https://www.typescriptlang.org/",
-      image:
-        "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/typescript-colored.svg",
+      title: "Backend",
+      icon: Server,
+      skills: ["Node.js", "Express", "PostgreSQL", "RESTful APIs"],
     },
     {
-      name: "HTML5",
-      link: "https://developer.mozilla.org/en-US/docs/Glossary/HTML5",
-      image:
-        "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/html5-colored.svg",
+      title: "Programming Languages",
+      icon: Code,
+      skills: ["JavaScript", "TypeScript", "Python"],
     },
     {
-      name: "React",
-      link: "https://reactjs.org/",
-      image:
-        "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg",
+      title: "Tools & Others",
+      icon: Terminal,
+      skills: ["Git", "GitHub", "VS Code", "Supabase", "Render"],
     },
-    {
-      name: "JQuery",
-      link: "https://jquery.com/",
-      image:
-        "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/jquery-colored.svg",
-    },
-    {
-      name: "Bootstrap",
-      link: "https://getbootstrap.com/",
-      image:
-        "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/bootstrap-colored.svg",
-    },
-    {
-      name: "Material UI",
-      link: "https://mui.com/",
-      image:
-        "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/materialui-colored.svg",
-    },
-    {
-      name: "Webpack",
-      link: "https://webpack.js.org/",
-      image:
-        "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/webpack-colored.svg",
-    },
-    {
-      name: "Babel",
-      link: "https://babeljs.io/",
-      image:
-        "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/babel-colored-dark.svg",
-    },
-    {
-      name: "NodeJS",
-      link: "https://nodejs.org/en/",
-      image:
-        "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nodejs-colored.svg",
-    },
-    {
-      name: "Express",
-      link: "https://expressjs.com/",
-      image:
-        "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/express-colored-dark.svg",
-    },
-    {
-      name: "PostgreSQL",
-      link: "https://www.postgresql.org/",
-      image:
-        "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/postgresql-colored.svg",
-    },
-    {
-      name: "Firebase",
-      link: "https://firebase.google.com/",
-      image:
-        "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/firebase-colored.svg",
-    },
-    {
-      name: "Heroku",
-      link: "https://www.heroku.com/",
-      image:
-        "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/heroku-colored.svg",
-    },
-    {
-      name: "Figma",
-      link: "https://www.figma.com/",
-      image:
-        "https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/figma-colored.svg",
-    },
-  ],
-};
-const Skills = () => {
+  ];
+
   return (
-    <div
-      className="container"
+    <section
+      className="bg-soft-white py-16 px-4 md:px-8"
       id="skills"
     >
-      <h2 className="card-title">Skills</h2>
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(350px,1fr))] gap-y-6 justify-items-center">
-        {skillItems.skills.map((skill: any, id: number) => (
-          <div
-            className="text-center min-w-[35%] bg-[#47463b85] px-0 py-[5px] rounded-[10px] border-[3px] border-[solid];
-"
-            key={id}
-          >
-            <p>{skill.name}</p>
-            <a
-              href={skill.link}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Image
-                className="m-auto"
-                src={skill.image}
-                alt={skill.name}
-                width="75"
-                height="75"
-              />
-            </a>
-          </div>
-        ))}
+      <div className="container mx-auto max-w-6xl">
+        <h2 className="text-3xl md:text-4xl font-bold text-dark-gray mb-8 uppercase tracking-wider overline">
+          Skills
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {skillCategories.map((category, index) => (
+            <SkillCategory
+              key={index}
+              title={category.title}
+              skills={category.skills}
+              icon={category.icon}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

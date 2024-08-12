@@ -1,6 +1,13 @@
-import * as React from "react";
-import type { NextPage } from "next";
+import React from "react";
 import Image from "next/image";
+import {
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  Button,
+} from "@chakra-ui/react";
+import { ExternalLink, GitHub } from "react-feather";
 
 const projectItems = {
   projects: [
@@ -104,69 +111,80 @@ const projectItems = {
   ],
 };
 
-const Projects: NextPage = () => {
+const Projects = () => {
   return (
-    <div
-      className="container"
+    <section
       id="projects"
+      className="py-16 bg-soft-white"
     >
-      <h2 className="text-uppercase text-overline">Projects</h2>
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(500px,2fr))] gap-y-6 justify-items-center">
-        {projectItems.projects.map((project: any, id: number) => (
-          <div
-            key={id}
-            className="flex flex-col justify-between w-[70%] bg-light-gray text-medium-orange m-2.5 p-2.5 border-[5px] border-solid rounded-[10px] border-dark-gray"
-          >
-            <div>
-              <h5>{project.name}</h5>
-              {project.image !== "" ? (
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold text-dark-gray mb-8 text-center uppercase tracking-wider border-t-4 border-medium-orange pt-4 inline-block">
+          Projects
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projectItems.projects.map((project, id) => (
+            <Card
+              key={id}
+              className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300 bg-white border-medium-orange border-2"
+            >
+              <CardHeader className="p-0">
                 <Image
-                  className="mt-[0.4rem] mb-3 mx-0"
-                  // component="img"
-                  height="350"
-                  width="450"
-                  src={project.image}
-                  alt=""
+                  src={project.image || "/assets/brandmark-design.png"}
+                  alt={project.name}
+                  width={500}
+                  height={300}
+                  className="w-full h-48 object-cover"
                 />
-              ) : (
-                <Image
-                  className="mt-[0.4rem] mb-3 mx-0"
-                  // component="img"
-                  height="350"
-                  width="450"
-                  src="/assets/brandmark-design.png"
-                  alt=""
-                />
-              )}
-              <p className="text-soft-white">{project.summary}</p>
-              <p className="text-soft-white">
-                <strong>Technologies:</strong> {project.tech}
-              </p>
-            </div>
-            <div>
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <button className="bg-medium-orange text-dark-gray text-center no-underline m-1 p-2 rounded-[10px]  hover:bg-dark-gray hover:text-soft-white hover:overline">
-                  Deployed Project
-                </button>
-              </a>
-              <a
-                href={project.sourceCode}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <button className="bg-medium-orange text-dark-gray text-center no-underline m-1 p-2 rounded-[10px]  hover:bg-dark-gray hover:text-soft-white hover:overline">
-                  Source Code
-                </button>
-              </a>
-            </div>
-          </div>
-        ))}
+              </CardHeader>
+              <CardBody className="flex-grow p-6">
+                <h3 className="text-xl font-semibold mb-2 text-dark-gray">
+                  {project.name}
+                </h3>
+                <p className="text-gray-700 mb-4">{project.summary}</p>
+                <p className="text-sm text-gray-600">
+                  <strong>Tech:</strong> {project.tech}
+                </p>
+                {project.inProgress && (
+                  <span className="inline-block bg-yellow-200 text-yellow-800 text-xs px-2 py-1 rounded-full mt-2">
+                    In Progress
+                  </span>
+                )}
+              </CardBody>
+              <CardFooter className="p-4 bg-light-gray">
+                <div className="flex justify-between w-full">
+                  <Button
+                    variant="outline"
+                    className="bg-medium-orange text-dark-gray hover:bg-dark-gray hover:text-soft-white hover:overline transition-colors duration-300"
+                  >
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center"
+                    >
+                      <ExternalLink className="mr-2 h-4 w-4" /> View Project
+                    </a>
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="bg-medium-orange text-dark-gray hover:bg-dark-gray hover:text-soft-white hover:overline transition-colors duration-300"
+                  >
+                    <a
+                      href={project.sourceCode}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center"
+                    >
+                      <GitHub className="mr-2 h-4 w-4" /> Source Code
+                    </a>
+                  </Button>
+                </div>
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
