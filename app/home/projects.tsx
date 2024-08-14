@@ -125,7 +125,7 @@ const Projects = () => {
           {projectItems.projects.map((project, id) => (
             <Card
               key={id}
-              className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300 bg-white border-medium-orange border-2"
+              className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300 bg-white border-medium-orange border-[5px]"
             >
               <CardHeader className="p-0">
                 <Image
@@ -145,7 +145,7 @@ const Projects = () => {
                   <strong>Tech:</strong> {project.tech}
                 </p>
                 {project.inProgress && (
-                  <span className="inline-block bg-yellow-200 text-yellow-800 text-xs px-2 py-1 rounded-full mt-2">
+                  <span className="inline-block bg-medium-orange text-dark-gray text-xs px-2 py-1 rounded-full mt-2 font-semibold">
                     In Progress
                   </span>
                 )}
