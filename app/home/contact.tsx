@@ -1,121 +1,139 @@
+"use client";
+
 import Image from "next/image";
-import { Send } from "react-feather";
-import speechBubble from "../../public/assets/speech-bubble.png";
+import { Send } from "lucide-react";
+import { useState } from "react";
 
 const Contact = () => {
+  const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormState({
+      ...formState,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   return (
-    <div
-      className="container"
+    <section
+      className="bg-soft-white py-16 px-4 md:px-8"
       id="contact"
     >
-      <form
-        className="w-9/12 text-center text-soft-white bg-light-gray m-auto p-10 rounded-[50px] border-[10px] border-solid border-medium-orange"
-        name="simple-contact-form"
-        acceptCharset="utf-8"
-        action="https://formspree.io/f/xnqlqojr"
-        method="post"
-      >
-        <Image
-          src={speechBubble}
-          alt=""
-          width={350}
-          height={350}
-        />
-        <h2>Contact Form</h2>
-        <p>
-          I&apos;d love to help you bring your vision to life! Let me know how I
-          can help below.
-        </p>
-        <div className="flex flex-col m-2">
-          <div className="mt-3">
-            <label
-              htmlFor="subject"
-              className="block font-medium leading-6 text-soft-white"
-            >
-              Message Subject
-            </label>
-            <div className="mt-3">
-              <input
-                id="subject"
-                name="subject"
-                type="text"
-                autoComplete="email"
-                required
-                className="text-center m-auto w-3/4 block rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-medium-orange focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 bg-dark-gray"
-                defaultValue="developd Contact Form Submission"
-              />
-            </div>
+      <div className="container mx-auto max-w-5xl">
+        <h2 className="text-3xl md:text-4xl font-bold text-dark-gray mb-8 text-center">
+          Get in Touch
+        </h2>
+        <div className="bg-light-gray rounded-lg shadow-xl p-8 md:p-12 flex flex-col md:flex-row items-center">
+          <div className="md:w-1/3 mb-8 md:mb-0">
+            <Image
+              src="/assets/speech-bubble.png"
+              alt="Speech bubble"
+              width={300}
+              height={300}
+              className="w-full h-auto"
+            />
           </div>
-
-          <div className="mt-3 grid grid-cols-1 gap-x-6 sm:grid-cols-6">
-            <div className="sm:col-span-3">
-              <label
-                htmlFor="first-name"
-                className="block font-medium leading-6 text-gray-900"
-              >
-                First and Last Name
-              </label>
-              <div className="mt-3">
+          <div className="md:w-2/3 md:pl-8">
+            <form
+              action="https://formspree.io/f/xnqlqojr"
+              method="POST"
+              className="space-y-6"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    value={formState.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-medium-orange focus:border-medium-orange"
+                    placeholder="Your Name"
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    value={formState.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-medium-orange focus:border-medium-orange"
+                    placeholder="your@email.com"
+                  />
+                </div>
+              </div>
+              <div>
+                <label
+                  htmlFor="subject"
+                  className="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  Subject
+                </label>
                 <input
                   type="text"
-                  name="full-name"
-                  id="full-name"
-                  autoComplete="given-name"
-                  className="text-center w-full block rounded-md border-0 py-1.5 mb-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-medium-orange focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 bg-dark-gray"
-                  placeholder="Joe Schmoe"
+                  name="subject"
+                  id="subject"
+                  value={formState.subject}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-medium-orange focus:border-medium-orange"
+                  placeholder="Message Subject"
                 />
               </div>
-            </div>
-
-            <div className="sm:col-span-3">
-              <label
-                htmlFor="last-name"
-                className="block font-medium leading-6 text-gray-900"
-              >
-                Email Address
-              </label>
-              <div className="mt-3">
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  autoComplete="family-name"
-                  className="text-center w-full block rounded-md border-0 py-1.5 mb-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-medium-orange focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 bg-dark-gray"
-                  placeholder="joeschmoe@email.com"
-                />
+              <div>
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-700 mb-1"
+                >
+                  Message
+                </label>
+                <textarea
+                  name="message"
+                  id="message"
+                  rows={4}
+                  value={formState.message}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-medium-orange focus:border-medium-orange"
+                  placeholder="Your message here..."
+                ></textarea>
               </div>
-            </div>
-          </div>
-
-          <div className="mt-3">
-            <label
-              htmlFor="message"
-              className="block font-medium leading-6 text-gray-900"
-            >
-              Message
-            </label>
-            <div className="mt-3">
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                className="text-center w-full block rounded-md border-0 py-1.5 mb-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-medium-orange focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 bg-dark-gray"
-                placeholder="Let's collaborate!"
-                required
-              />
-            </div>
+              <div className="text-center">
+                <button
+                  type="submit"
+                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-medium-orange hover:bg-dark-gray focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-medium-orange transition duration-150 ease-in-out"
+                >
+                  Send Message
+                  <Send className="ml-2 -mr-1 h-5 w-5" />
+                </button>
+              </div>
+            </form>
           </div>
         </div>
-        <button
-          className="flex flex-row text-medium-orange bg-dark-gray m-auto p-3 rounded-[10px]  hover:text-dark-gray hover:bg-medium-orange hover:overline"
-          type="submit"
-          value="Send Message"
-        >
-          <p className="m-auto">Send Message &nbsp;</p>
-          <Send />
-        </button>
-      </form>
-    </div>
+      </div>
+    </section>
   );
 };
 
