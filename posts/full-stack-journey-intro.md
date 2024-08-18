@@ -8,13 +8,12 @@ tags: [
   "backend development",
   "coding journey"
 ]
-description: "Discover my path from childhood tinkerer to freelance full stack web developer, and learn about my passion for mechanical keyboards along the way."
+description: "Discover my path from childhood tinkerer to freelance full stack web developer."
 keywords: [
   "full stack developer",
   "web development career",
   "coding bootcamp experience",
   "freelance web developer",
-  "mechanical keyboard enthusiast",
   "HTML",
   "CSS",
   "JavaScript",
