@@ -1,49 +1,59 @@
 "use client";
-import { Link } from "@chakra-ui/next-js";
-import { Box, Flex, Heading, Text, Button, Image } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  Text,
+  Image,
+  useMediaQuery,
+  VStack,
+} from "@chakra-ui/react";
 import React from "react";
 
 export default function NotFound() {
+  const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
+
   return (
     <Flex
-      maxH="100vh"
       justifyContent="center"
       alignItems="center"
-      flexDirection="row"
+      minHeight="calc(100vh - 136px)" // 100vh minus (96px nav + 40px footer)
+      p={4}
     >
-      <Box textAlign="center">
-        <Heading
-          mb={4}
-          className="color-medium-orange"
+      <Flex
+        flexDirection={isLargerThan768 ? "row" : "column"}
+        alignItems="center"
+        justifyContent="center"
+        maxWidth="1200px"
+        width="100%"
+      >
+        <VStack
+          spacing={6}
+          textAlign="center"
+          maxW="400px"
+          w="100%"
+          mb={isLargerThan768 ? 0 : 8}
         >
-          Uh oh..
-        </Heading>
-        <Heading
-          mb={6}
-          size="lg"
-          fontWeight="normal"
-        >
-          Something went wrong
-        </Heading>
-        <Text mb={8}>
-          Looks like this page doesn&apos;t exist or was removed.
-        </Text>
-        <Button
-          size="lg"
-          as="a"
-          href="/"
-          className="bg-medium-orange transition duration-300 hover:scale-105 transform"
-        >
-          Back to Home
-        </Button>
-      </Box>
-      <Box mt={12}>
-        <Image
-          boxSize="50vw"
-          src="/assets/404.png"
-          alt="404 Illustration"
-        />
-      </Box>
+          <Heading fontSize={["2xl", "3xl", "4xl"]}>Uh oh..</Heading>
+          <Heading
+            fontSize={["xl", "2xl", "3xl"]}
+            fontWeight="normal"
+          >
+            Something went wrong
+          </Heading>
+          <Text fontSize={["md", "lg"]}>
+            Looks like this page doesn&apos;t exist or was removed.
+          </Text>
+        </VStack>
+        <Box ml={isLargerThan768 ? 12 : 0}>
+          <Image
+            boxSize={isLargerThan768 ? "40vw" : "80vw"}
+            maxW="400px"
+            src="/assets/404.png"
+            alt="404 Illustration"
+          />
+        </Box>
+      </Flex>
     </Flex>
   );
 }
