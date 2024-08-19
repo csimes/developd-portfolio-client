@@ -17,19 +17,31 @@ import {
 import { Calendar, Clock } from "lucide-react";
 import getPostMetadata from "../../utils/posts";
 
+interface PostMetadata {
+  slug: string;
+  title: string;
+  date: string;
+  description: string;
+  tags: string | string[];
+}
+
 export const generateStaticParams = async () => {
   const posts = getPostMetadata("posts");
   return posts.map((post) => ({ slug: post.slug }));
 };
 
-export async function generateMetadata(params: any) {
-  const id = params?.slug ? " ⋅ " + params?.slug : "";
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug?: string };
+}) {
+  const id = params?.slug ? " ⋅ " + params.slug : "";
   return {
     title: `developd | blog ${id.replaceAll("_", " ")}`,
   };
 }
 
-const formatTags = (tags: any): React.ReactNode => {
+const formatTags = (tags: PostMetadata["tags"]): React.ReactNode => {
   if (!tags || (Array.isArray(tags) && tags.length === 0)) {
     return (
       <Tag
@@ -61,27 +73,104 @@ const formatTags = (tags: any): React.ReactNode => {
     );
   }
 
-  if (typeof tags === "string") {
-    return (
-      <Tag
-        size="sm"
-        variant="outline"
-        colorScheme="blue"
-      >
-        {tags}
-      </Tag>
-    );
-  }
-
   return (
     <Tag
       size="sm"
       variant="outline"
+      colorScheme="blue"
     >
-      Invalid tags
+      {tags}
     </Tag>
   );
 };
+
+const formatDate = (date: string | Date): string => {
+  if (typeof date === "string") {
+    return date;
+  }
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+};
+
+const BlogPost: React.FC<PostMetadata> = ({
+  slug,
+  title,
+  date,
+  description,
+  tags,
+}) => (
+  <GridItem>
+    <Box
+      borderWidth="1px"
+      borderRadius="lg"
+      overflow="hidden"
+      transition="all 0.3s"
+      _hover={{ transform: "translateY(-5px)", boxShadow: "lg" }}
+      height="100%"
+      display="flex"
+      flexDirection="column"
+    >
+      <Image
+        src="https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?q=80&w=1973&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Post Image"
+        objectFit="cover"
+        h="200px"
+      />
+      <VStack
+        p={6}
+        align="stretch"
+        flex={1}
+        justify="space-between"
+      >
+        <Box>
+          <Box mb={3}>{formatTags(tags)}</Box>
+          <Link
+            as={NextLink}
+            href={`/blog/${slug}`}
+          >
+            <Heading
+              size="md"
+              mb={2}
+              noOfLines={2}
+            >
+              {title || "Untitled Blog"}
+            </Heading>
+          </Link>
+          <Text
+            color="gray.600"
+            noOfLines={3}
+            mb={4}
+          >
+            {description || "No description"}
+          </Text>
+        </Box>
+        <HStack
+          spacing={4}
+          fontSize="sm"
+          color="gray.500"
+        >
+          <Flex align="center">
+            <Calendar
+              size={16}
+              style={{ marginRight: "4px" }}
+            />
+            <Text>{formatDate(date) || "No Date"}</Text>
+          </Flex>
+          <Flex align="center">
+            <Clock
+              size={16}
+              style={{ marginRight: "4px" }}
+            />
+            <Text>5 min read</Text>
+          </Flex>
+        </HStack>
+      </VStack>
+    </Box>
+  </GridItem>
+);
 
 export default function Blog() {
   const postMetadata = getPostMetadata("posts");
@@ -147,75 +236,11 @@ export default function Blog() {
           ]}
           gap={8}
         >
-          {postMetadata.map((post, index) => (
-            <GridItem key={post.slug}>
-              <Box
-                borderWidth="1px"
-                borderRadius="lg"
-                overflow="hidden"
-                transition="all 0.3s"
-                _hover={{ transform: "translateY(-5px)", boxShadow: "lg" }}
-                height="100%"
-                display="flex"
-                flexDirection="column"
-              >
-                <Image
-                  src="https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?q=80&w=1973&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Post Image"
-                  objectFit="cover"
-                  h="200px"
-                />
-                <VStack
-                  p={6}
-                  align="stretch"
-                  flex={1}
-                  justify="space-between"
-                >
-                  <Box>
-                    <Box mb={3}>{formatTags(post.tags)}</Box>
-                    <Link
-                      as={NextLink}
-                      href={`/blog/${post.slug}`}
-                    >
-                      <Heading
-                        size="md"
-                        mb={2}
-                        noOfLines={2}
-                      >
-                        {post.title || "Untitled Blog"}
-                      </Heading>
-                    </Link>
-                    <Text
-                      color="gray.600"
-                      noOfLines={3}
-                      mb={4}
-                    >
-                      {post.description || "No description"}
-                    </Text>
-                  </Box>
-                  <HStack
-                    spacing={4}
-                    fontSize="sm"
-                    color="gray.500"
-                  >
-                    <Flex align="center">
-                      <Calendar
-                        size={16}
-                        style={{ marginRight: "4px" }}
-                      />
-                      <Text>{post.date || "No Date"}</Text>
-                    </Flex>
-                    <Flex align="center">
-                      <Clock
-                        size={16}
-                        style={{ marginRight: "4px" }}
-                      />
-                      <Text>5 min read</Text>
-                    </Flex>
-                  </HStack>
-                </VStack>
-              </Box>
-            </GridItem>
+          {postMetadata.map((post) => (
+            <BlogPost
+              key={post.slug}
+              {...post}
+            />
           ))}
         </Grid>
       </VStack>
