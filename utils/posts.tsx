@@ -4,7 +4,32 @@ import matter from "gray-matter";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
-export async function getPostMetadata() {
+export interface PostMetadata {
+  slug: string;
+  title: string;
+  date: string;
+  description: string;
+  tags: string[];
+  image?: string;
+}
+
+export interface Post {
+  frontMatter: PostMetadata;
+  content: string;
+}
+
+function formatDate(date: Date | string): string {
+  if (typeof date === "string") {
+    date = new Date(date);
+  }
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
+export async function getPostMetadata(): Promise<PostMetadata[]> {
   const fileNames = await fs.readdir(postsDirectory);
   const allPostsData = await Promise.all(
     fileNames.map(async (fileName) => {
@@ -15,31 +40,39 @@ export async function getPostMetadata() {
 
       return {
         slug,
-        ...(matterResult.data as {
-          title: string;
-          date: string;
-          description: string;
-          tags: string[];
-        }),
-      };
+        title: matterResult.data.title,
+        date: formatDate(matterResult.data.date),
+        description: matterResult.data.description,
+        tags: matterResult.data.tags || [],
+        image: matterResult.data.image,
+      } as PostMetadata;
     })
   );
 
-  return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
+  return allPostsData.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
 }
 
-export async function getPostBySlug(slug: string) {
+export async function getPostBySlug(slug: string): Promise<Post> {
   const fullPath = path.join(postsDirectory, `${slug}.md`);
   const fileContents = await fs.readFile(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
   return {
-    frontMatter: data,
+    frontMatter: {
+      slug,
+      title: data.title,
+      date: formatDate(data.date),
+      description: data.description,
+      tags: data.tags || [],
+      image: data.image,
+    },
     content,
   };
 }
 
-export async function getAllPostSlugs() {
+export async function getAllPostSlugs(): Promise<string[]> {
   const fileNames = await fs.readdir(postsDirectory);
   return fileNames.map((fileName) => fileName.replace(/\.md$/, ""));
 }

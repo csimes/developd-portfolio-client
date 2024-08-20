@@ -1,64 +1,104 @@
 import React from "react";
-import { Box, Container, Heading, Text, VStack, Image } from "@chakra-ui/react";
-import Markdown from "markdown-to-jsx";
-import fs from "fs";
-import matter from "gray-matter";
+import {
+  Box,
+  Container,
+  Heading,
+  Text,
+  VStack,
+  Image,
+  ListItem,
+  UnorderedList,
+  OrderedList,
+  Link,
+  Code,
+} from "@chakra-ui/react";
+import { getPostBySlug, getAllPostSlugs, Post } from "../../../utils/posts";
+import ReactMarkdown from "react-markdown";
 
-interface PostFrontmatter {
-  title: string;
-  date: string | Date;
-  image?: string;
-  [key: string]: any; // Allow for additional frontmatter fields
+export async function generateStaticParams() {
+  const slugs = await getAllPostSlugs();
+  return slugs.map((slug) => ({
+    slug: slug,
+  }));
 }
 
-interface PostContent {
-  data: PostFrontmatter;
-  content: string;
-}
-
-function getPostContent(slug: string): PostContent {
-  const folder = "posts/";
-  const file = `${folder}${slug}.md`;
-  const content = fs.readFileSync(file, "utf8");
-  const matterResult = matter(content);
-
-  // Ensure required fields are present and of the correct type
-  const data: PostFrontmatter = {
-    title: matterResult.data.title || "Untitled",
-    date: matterResult.data.date || new Date(),
-    image: matterResult.data.image,
-    ...matterResult.data,
-  };
-
-  return {
-    data,
-    content: matterResult.content,
-  };
-}
-
-const formatDate = (date: string | Date): string => {
-  if (typeof date === "string") {
-    return new Date(date).toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-  }
-  return date.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+const MarkdownComponents = {
+  h1: (props: any) => (
+    <Heading
+      as="h1"
+      size="2xl"
+      my={4}
+      {...props}
+    />
+  ),
+  h2: (props: any) => (
+    <Heading
+      as="h2"
+      size="xl"
+      my={4}
+      {...props}
+    />
+  ),
+  h3: (props: any) => (
+    <Heading
+      as="h3"
+      size="lg"
+      my={3}
+      {...props}
+    />
+  ),
+  h4: (props: any) => (
+    <Heading
+      as="h4"
+      size="md"
+      my={2}
+      {...props}
+    />
+  ),
+  p: (props: any) => (
+    <Text
+      mb={2}
+      fontSize="md"
+      {...props}
+    />
+  ),
+  ul: (props: any) => (
+    <UnorderedList
+      my={2}
+      {...props}
+    />
+  ),
+  ol: (props: any) => (
+    <OrderedList
+      my={2}
+      {...props}
+    />
+  ),
+  li: (props: any) => <ListItem {...props} />,
+  a: (props: any) => (
+    <Link
+      color="blue.500"
+      {...props}
+    />
+  ),
+  code: (props: any) => (
+    <Code
+      p={2}
+      {...props}
+    />
+  ),
 };
 
-const Posts = ({ params }: { params: { slug: string } }) => {
-  const { slug } = params;
-  if (!slug) {
-    return <Text>No blog post found.</Text>;
-  }
+export default async function BlogPost({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const post: Post = await getPostBySlug(params.slug);
 
-  const post = getPostContent(slug);
-  const { title, date, image } = post.data;
+  if (!post) {
+    return <div>Post not found</div>;
+  }
 
   return (
     <Container
@@ -69,14 +109,14 @@ const Posts = ({ params }: { params: { slug: string } }) => {
         spacing={8}
         align="stretch"
       >
-        {image && (
+        {post.frontMatter.image && (
           <Box
             borderRadius="lg"
             overflow="hidden"
           >
             <Image
-              src={image}
-              alt={title}
+              src={post.frontMatter.image}
+              alt={post.frontMatter.title}
               objectFit="cover"
               w="100%"
               h="400px"
@@ -91,21 +131,21 @@ const Posts = ({ params }: { params: { slug: string } }) => {
             as="h1"
             size="2xl"
           >
-            {title}
+            {post.frontMatter.title}
           </Heading>
           <Text
             fontSize="lg"
             color="gray.500"
           >
-            {formatDate(date)}
+            {post.frontMatter.date}
           </Text>
         </VStack>
         <Box className="blog-content">
-          <Markdown>{post.content}</Markdown>
+          <ReactMarkdown components={MarkdownComponents}>
+            {post.content}
+          </ReactMarkdown>
         </Box>
       </VStack>
     </Container>
   );
-};
-
-export default Posts;
+}

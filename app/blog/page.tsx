@@ -15,34 +15,18 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import { Calendar, Clock } from "lucide-react";
-import getPostMetadata from "../../utils/posts";
+import { getPostMetadata } from "../../utils/posts";
 
 interface PostMetadata {
   slug: string;
   title: string;
   date: string;
   description: string;
-  tags: string | string[];
+  tags: string[];
 }
 
-export const generateStaticParams = async () => {
-  const posts = getPostMetadata("posts");
-  return posts.map((post) => ({ slug: post.slug }));
-};
-
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug?: string };
-}) {
-  const id = params?.slug ? " ⋅ " + params.slug : "";
-  return {
-    title: `developd | blog ${id.replaceAll("_", " ")}`,
-  };
-}
-
-const formatTags = (tags: PostMetadata["tags"]): React.ReactNode => {
-  if (!tags || (Array.isArray(tags) && tags.length === 0)) {
+const formatTags = (tags: string[]): React.ReactNode => {
+  if (!tags || tags.length === 0) {
     return (
       <Tag
         size="sm"
@@ -53,46 +37,23 @@ const formatTags = (tags: PostMetadata["tags"]): React.ReactNode => {
     );
   }
 
-  if (Array.isArray(tags)) {
-    return (
-      <Flex
-        flexWrap="wrap"
-        gap={2}
-      >
-        {tags.map((tag, index) => (
-          <Tag
-            key={index}
-            size="sm"
-            variant="outline"
-            colorScheme="blue"
-          >
-            {tag}
-          </Tag>
-        ))}
-      </Flex>
-    );
-  }
-
   return (
-    <Tag
-      size="sm"
-      variant="outline"
-      colorScheme="blue"
+    <Flex
+      flexWrap="wrap"
+      gap={2}
     >
-      {tags}
-    </Tag>
+      {tags.map((tag, index) => (
+        <Tag
+          key={index}
+          size="sm"
+          variant="outline"
+          colorScheme="blue"
+        >
+          {tag}
+        </Tag>
+      ))}
+    </Flex>
   );
-};
-
-const formatDate = (date: string | Date): string => {
-  if (typeof date === "string") {
-    return date;
-  }
-  return date.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
 };
 
 const BlogPost: React.FC<PostMetadata> = ({
@@ -157,7 +118,7 @@ const BlogPost: React.FC<PostMetadata> = ({
               size={16}
               style={{ marginRight: "4px" }}
             />
-            <Text>{formatDate(date) || "No Date"}</Text>
+            <Text>{date}</Text>
           </Flex>
           <Flex align="center">
             <Clock
@@ -172,8 +133,8 @@ const BlogPost: React.FC<PostMetadata> = ({
   </GridItem>
 );
 
-export default function Blog() {
-  const postMetadata = getPostMetadata("posts");
+export default async function Blog() {
+  const posts = await getPostMetadata();
 
   return (
     <Container
@@ -236,7 +197,7 @@ export default function Blog() {
           ]}
           gap={8}
         >
-          {postMetadata.map((post) => (
+          {posts.map((post) => (
             <BlogPost
               key={post.slug}
               {...post}
