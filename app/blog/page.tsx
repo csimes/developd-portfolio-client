@@ -170,13 +170,13 @@ export default async function Blog() {
               size="2xl"
               mb={4}
             >
-              Welcome to Our Blog
+              Welcome to the developd Blog
             </Heading>
             <Text
               color="whiteAlpha.800"
               fontSize="xl"
             >
-              Explore our latest articles and stay updated with the newest
+              Explore the latest articles and stay updated with the newest
               trends
             </Text>
           </Box>
