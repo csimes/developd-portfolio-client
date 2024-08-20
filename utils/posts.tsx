@@ -11,6 +11,7 @@ export interface PostMetadata {
   description: string;
   tags: string[];
   image?: string;
+  readTime: number;
 }
 
 export interface Post {
@@ -29,6 +30,12 @@ function formatDate(date: Date | string): string {
   });
 }
 
+function calculateReadTime(content: string): number {
+  const wordsPerMinute = 200;
+  const wordCount = content.split(/\s+/).length;
+  return Math.ceil(wordCount / wordsPerMinute);
+}
+
 export async function getPostMetadata(): Promise<PostMetadata[]> {
   const fileNames = await fs.readdir(postsDirectory);
   const allPostsData = await Promise.all(
@@ -37,6 +44,7 @@ export async function getPostMetadata(): Promise<PostMetadata[]> {
       const fullPath = path.join(postsDirectory, fileName);
       const fileContents = await fs.readFile(fullPath, "utf8");
       const matterResult = matter(fileContents);
+      const readTime = calculateReadTime(matterResult.content);
 
       return {
         slug,
@@ -45,6 +53,7 @@ export async function getPostMetadata(): Promise<PostMetadata[]> {
         description: matterResult.data.description,
         tags: matterResult.data.tags || [],
         image: matterResult.data.image,
+        readTime,
       } as PostMetadata;
     })
   );
@@ -58,6 +67,7 @@ export async function getPostBySlug(slug: string): Promise<Post> {
   const fullPath = path.join(postsDirectory, `${slug}.md`);
   const fileContents = await fs.readFile(fullPath, "utf8");
   const { data, content } = matter(fileContents);
+  const readTime = calculateReadTime(content);
 
   return {
     frontMatter: {
@@ -67,6 +77,7 @@ export async function getPostBySlug(slug: string): Promise<Post> {
       description: data.description,
       tags: data.tags || [],
       image: data.image,
+      readTime,
     },
     content,
   };

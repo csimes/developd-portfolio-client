@@ -11,7 +11,10 @@ import {
   OrderedList,
   Link,
   Code,
+  Flex,
+  Tag,
 } from "@chakra-ui/react";
+import { Calendar, Clock } from "lucide-react";
 import { getPostBySlug, getAllPostSlugs, Post } from "../../../utils/posts";
 import ReactMarkdown from "react-markdown";
 
@@ -94,7 +97,7 @@ export default async function BlogPost({
 }: {
   params: { slug: string };
 }) {
-  const post: Post = await getPostBySlug(params.slug);
+  const post = await getPostBySlug(params.slug);
 
   if (!post) {
     return <div>Post not found</div>;
@@ -133,12 +136,37 @@ export default async function BlogPost({
           >
             {post.frontMatter.title}
           </Heading>
-          <Text
-            fontSize="lg"
+          <Flex
+            align="center"
+            fontSize="sm"
             color="gray.500"
           >
-            {post.frontMatter.date}
-          </Text>
+            <Calendar
+              size={16}
+              style={{ marginRight: "4px" }}
+            />
+            <Text mr={4}>{post.frontMatter.date}</Text>
+            <Clock
+              size={16}
+              style={{ marginRight: "4px" }}
+            />
+            <Text>{post.frontMatter.readTime} min read</Text>
+          </Flex>
+          <Flex
+            wrap="wrap"
+            gap={2}
+          >
+            {post.frontMatter.tags.map((tag, index) => (
+              <Tag
+                key={index}
+                size="sm"
+                variant="outline"
+                colorScheme="blue"
+              >
+                {tag}
+              </Tag>
+            ))}
+          </Flex>
         </VStack>
         <Box className="blog-content">
           <ReactMarkdown components={MarkdownComponents}>

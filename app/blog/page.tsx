@@ -15,15 +15,7 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import { Calendar, Clock } from "lucide-react";
-import { getPostMetadata } from "../../utils/posts";
-
-interface PostMetadata {
-  slug: string;
-  title: string;
-  date: string;
-  description: string;
-  tags: string[];
-}
+import { getPostMetadata, PostMetadata } from "../../utils/posts";
 
 const formatTags = (tags: string[]): React.ReactNode => {
   if (!tags || tags.length === 0) {
@@ -62,6 +54,7 @@ const BlogPost: React.FC<PostMetadata> = ({
   date,
   description,
   tags,
+  readTime,
 }) => (
   <GridItem>
     <Box
@@ -125,7 +118,7 @@ const BlogPost: React.FC<PostMetadata> = ({
               size={16}
               style={{ marginRight: "4px" }}
             />
-            <Text>5 min read</Text>
+            <Text>{readTime} min read</Text>
           </Flex>
         </HStack>
       </VStack>
