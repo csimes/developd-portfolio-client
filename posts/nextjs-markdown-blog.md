@@ -1,5 +1,5 @@
 ---
-title: "Creating a Next.js Blog with App Router and Markdown"
+title: "Creating a Next.js Blog with App Router and Markdown (2024 Update)"
 date: 2024-08-19
 author: Cherron Simes
 tags:
@@ -10,36 +10,35 @@ tags:
     "Frontmatter",
     "Metadata",
     "App Router",
+    "React Server Components",
   ]
-description: "Learn how to build a powerful and efficient blog using Next.js, App Router, and Markdown. This comprehensive guide covers everything from setup to deployment, including SEO best practices."
+description: "Learn how to build a modern, efficient blog using Next.js 14, App Router, and Markdown. This updated guide covers the latest best practices, including React Server Components and improved performance optimizations."
 keywords:
   [
-    "Next.js blog",
+    "Next.js 14 blog",
     "App Router",
     "Markdown blog",
     "Static Site Generation",
     "SEO for blogs",
     "gray-matter",
-    "markdown-to-jsx",
+    "react-markdown",
     "Chakra UI",
     "blog development",
-    "React framework",
+    "React Server Components",
   ]
 ---
 
-# Creating a Next.js Blog: Harnessing App Router and Markdown
-
 ## Introduction
 
-In this comprehensive guide, we'll walk through the process of building a modern, efficient blog using Next.js, a powerful React framework. We'll leverage the new App Router, along with Markdown for content management, to create a seamless and developer-friendly blogging platform. This approach combines the best of both worlds: the flexibility and ease of writing in Markdown, and the performance and developer experience of Next.js.
+In this comprehensive guide, we'll walk through the process of building a modern, efficient blog using Next.js 14, the latest version of this powerful React framework. We'll leverage the App Router, along with Markdown for content management, to create a seamless and developer-friendly blogging platform. This approach combines the best of both worlds: the flexibility and ease of writing in Markdown, and the performance and developer experience of Next.js.
 
 ## Why Next.js for Blogging?
 
 Next.js has become a go-to choice for building web applications, and it's particularly well-suited for blogs. Here's why:
 
-1. **Static Site Generation (SSG)**: Next.js excels at SSG, allowing us to pre-render our blog posts at build time. This results in blazing-fast page loads and improved SEO.
-2. **App Router**: The new App Router in Next.js 13+ provides an intuitive way to structure our application and handle routing, making it easier to organize our blog.
-3. **React-based**: Leveraging React's component-based architecture allows for modular and maintainable code.
+1. **Static Site Generation (SSG) and Server-Side Rendering (SSR)**: Next.js excels at both SSG and SSR, allowing us to pre-render our blog posts at build time or on-demand. This results in blazing-fast page loads and improved SEO.
+2. **App Router**: The App Router in Next.js provides an intuitive way to structure our application and handle routing, making it easier to organize our blog.
+3. **React Server Components**: Introduced in Next.js 13 and improved in version 14, React Server Components allow for better performance and smaller client-side JavaScript bundles.
 4. **Built-in optimizations**: Next.js comes with image optimization, code splitting, and other performance enhancements out of the box.
 
 ## Understanding Frontmatter and Metadata
@@ -60,10 +59,10 @@ Here's an example of frontmatter in a Markdown file:
 ```yaml
 ---
 title: "My Awesome Blog Post"
-date: 2024-04-22
+date: 2024-08-19
 author: Cherron Simes
 tags: ["Next.js", "React", "Web Development"]
-description: "A deep dive into building modern web applications with Next.js"
+description: "A deep dive into building modern web applications with Next.js 14"
 ---
 ```
 
@@ -73,7 +72,7 @@ This metadata is invaluable for organizing, sorting, and displaying your blog po
 
 Before we start, ensure you have:
 
-- Node.js (v14 or later)
+- Node.js (v18 or later)
 - A code editor (e.g., Visual Studio Code)
 - Basic knowledge of React and JavaScript
 
@@ -102,7 +101,7 @@ Let's begin by creating our Next.js project:
 
 4. Install additional dependencies:
    ```bash
-   npm install gray-matter markdown-to-jsx @chakra-ui/react @chakra-ui/next-js @emotion/react @emotion/styled framer-motion
+   npm install gray-matter react-markdown @chakra-ui/react @chakra-ui/next-js @emotion/react @emotion/styled framer-motion
    ```
 
 ## Project Structure
@@ -231,7 +230,7 @@ Create `app/blog/[slug]/page.tsx`:
 
 ```tsx
 import { getPostContent, getPostMetadata } from "@/lib/posts";
-import Markdown from "markdown-to-jsx";
+import ReactMarkdown from "react-markdown";
 import { Box, Heading, Text } from "@chakra-ui/react";
 
 export async function generateStaticParams() {
@@ -258,7 +257,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
       </Heading>
       <Text mb={8}>{data.date}</Text>
       <Box className="prose">
-        <Markdown>{content}</Markdown>
+        <ReactMarkdown>{content}</ReactMarkdown>
       </Box>
     </Box>
   );
@@ -324,6 +323,53 @@ export async function generateMetadata({
 // ... rest of the component
 ```
 
+## Performance Optimizations
+
+Next.js 14 introduces several performance optimizations. Here are a few tips to make your blog even faster:
+
+1. **Use Image Component**: For optimized images, use the Next.js Image component:
+
+   ```tsx
+   import Image from "next/image";
+
+   // In your component
+   <Image
+     src="/path/to/image.jpg"
+     alt="Description"
+     width={500}
+     height={300}
+   />;
+   ```
+
+2. **Implement ISR**: For frequently updated content, use Incremental Static Regeneration:
+
+   ```tsx
+   export const revalidate = 3600; // revalidate every hour
+   ```
+
+3. **Optimize Fonts**: Use `next/font` to optimize loading of custom fonts:
+
+   ```tsx
+   import { Inter } from "next/font/google";
+
+   const inter = Inter({ subsets: ["latin"] });
+
+   export default function RootLayout({
+     children,
+   }: {
+     children: React.ReactNode;
+   }) {
+     return (
+       <html
+         lang="en"
+         className={inter.className}
+       >
+         <body>{children}</body>
+       </html>
+     );
+   }
+   ```
+
 ## Deployment
 
 To deploy your Next.js blog:
@@ -336,7 +382,7 @@ To deploy your Next.js blog:
 
 ## Conclusion
 
-Congratulations! You've now created a powerful, SEO-friendly blog using Next.js, App Router, and Markdown. This setup provides a solid foundation that you can further customize and expand upon.
+Congratulations! You've now created a powerful, SEO-friendly blog using Next.js 14, App Router, and Markdown. This setup provides a solid foundation that you can further customize and expand upon.
 
 Remember to:
 
@@ -344,5 +390,6 @@ Remember to:
 - Regularly update your blog with new posts
 - Optimize your images and use alt tags
 - Consider adding features like comments, social sharing, and an RSS feed
+- Keep your Next.js and dependencies updated for the latest features and security patches
 
 Happy blogging!
