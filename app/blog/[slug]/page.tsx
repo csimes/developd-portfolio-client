@@ -119,7 +119,7 @@ export default async function BlogPost({
           >
             <Image
               src={post.frontMatter.image}
-              alt={post.frontMatter.title}
+              alt={`Cover image for {post.frontMatter.title}`}
               objectFit="cover"
               w="100%"
               h="400px"

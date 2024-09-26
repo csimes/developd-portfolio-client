@@ -55,6 +55,7 @@ const BlogPost: React.FC<PostMetadata> = ({
   description,
   tags,
   readTime,
+  image,
 }) => (
   <GridItem>
     <Box
@@ -68,8 +69,8 @@ const BlogPost: React.FC<PostMetadata> = ({
       flexDirection="column"
     >
       <Image
-        src="https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?q=80&w=1973&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="Post Image"
+        src={image}
+        alt={`cover image for ${title}`}
         objectFit="cover"
         h="200px"
       />
@@ -145,7 +146,7 @@ export default async function Blog() {
           overflow="hidden"
         >
           <Image
-            src="https://images.unsplash.com/photo-1542435503-956c469947f6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="https://images.unsplash.com/photo-1599837565318-67429bde7162?q=80&w=3774&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Hero Image"
             objectFit="cover"
             w="100%"

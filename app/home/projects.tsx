@@ -69,36 +69,36 @@ const projectItems = {
       sourceCode: "https://github.com/csimes/csimes.github.io",
       inProgress: false,
     },
-    {
-      name: "Contact Form",
-      summary:
-        "This is the first project I assigned to myself, a simple contact form.",
-      tech: "HTML, CSS",
-      image: "/assets/contact-form.png",
-      url: "https://codepen.io/csimes/full/RJrppL",
-      sourceCode: "https://codepen.io/csimes/pen/RJrppL",
-      inProgress: false,
-    },
-    {
-      name: "CSS Creature",
-      summary:
-        "This is my best attempt at drawing a cute baby chick using CSS.",
-      tech: "HTML, CSS",
-      image: "/assets/css-creature.png",
-      url: "https://codepen.io/csimes/full/zYNEaOZ",
-      sourceCode: "https://codepen.io/csimes/pen/zYNEaOZ",
-      inProgress: false,
-    },
-    {
-      name: "Tribute Page",
-      summary:
-        "This is the first small webpage I designed, dedicated to Ruth Bader Ginsberg.",
-      tech: "HTML, CSS",
-      image: "/assets/fcc-tribute.png",
-      url: "https://codepen.io/csimes/full/PaPxXJ",
-      sourceCode: "https://codepen.io/csimes/pen/PaPxXJ",
-      inProgress: false,
-    },
+    // {
+    //   name: "Contact Form",
+    //   summary:
+    //     "This is the first project I assigned to myself, a simple contact form.",
+    //   tech: "HTML, CSS",
+    //   image: "/assets/contact-form.png",
+    //   url: "https://codepen.io/csimes/full/RJrppL",
+    //   sourceCode: "https://codepen.io/csimes/pen/RJrppL",
+    //   inProgress: false,
+    // },
+    // {
+    //   name: "CSS Creature",
+    //   summary:
+    //     "This is my best attempt at drawing a cute baby chick using CSS.",
+    //   tech: "HTML, CSS",
+    //   image: "/assets/css-creature.png",
+    //   url: "https://codepen.io/csimes/full/zYNEaOZ",
+    //   sourceCode: "https://codepen.io/csimes/pen/zYNEaOZ",
+    //   inProgress: false,
+    // },
+    // {
+    //   name: "Tribute Page",
+    //   summary:
+    //     "This is the first small webpage I designed, dedicated to Ruth Bader Ginsberg.",
+    //   tech: "HTML, CSS",
+    //   image: "/assets/fcc-tribute.png",
+    //   url: "https://codepen.io/csimes/full/PaPxXJ",
+    //   sourceCode: "https://codepen.io/csimes/pen/PaPxXJ",
+    //   inProgress: false,
+    // },
     // {
     //   name: "",
     //   summary: "",
@@ -154,7 +154,7 @@ const Projects = () => {
                 <div className="flex justify-between w-full">
                   <Button
                     variant="outline"
-                    className="bg-medium-orange text-dark-gray hover:bg-dark-gray hover:text-soft-white hover:overline transition-colors duration-300"
+                    className="bg-medium-orange text-dark-gray hover:overline"
                   >
                     <a
                       href={project.url}
@@ -167,7 +167,7 @@ const Projects = () => {
                   </Button>
                   <Button
                     variant="outline"
-                    className="bg-medium-orange text-dark-gray hover:bg-dark-gray hover:text-soft-white hover:overline transition-colors duration-300"
+                    className="bg-medium-orange text-dark-gray hover:overline"
                   >
                     <a
                       href={project.sourceCode}

@@ -36,6 +36,21 @@ function calculateReadTime(content: string): number {
   return Math.ceil(wordCount / wordsPerMinute);
 }
 
+function isValidHttpUrl(string: string) {
+  let url
+  try {
+    url = new URL(string);
+  } catch (_) {
+    return false
+  }
+  return url.protocol === "http:" || url.protocol === "https:"
+}
+
+function getImagePath(image: string | undefined) {
+  if (!image) return "/default-blog-image.jpg";
+  return isValidHttpUrl(image) ? image : `/images/${image}`
+}
+
 export async function getPostMetadata(): Promise<PostMetadata[]> {
   const fileNames = await fs.readdir(postsDirectory);
   const allPostsData = await Promise.all(
@@ -52,7 +67,7 @@ export async function getPostMetadata(): Promise<PostMetadata[]> {
         date: formatDate(matterResult.data.date),
         description: matterResult.data.description,
         tags: matterResult.data.tags || [],
-        image: matterResult.data.image,
+        image: getImagePath(matterResult.data.image),
         readTime,
       } as PostMetadata;
     })
@@ -76,7 +91,7 @@ export async function getPostBySlug(slug: string): Promise<Post> {
       date: formatDate(data.date),
       description: data.description,
       tags: data.tags || [],
-      image: data.image,
+      image: getImagePath(data.image),
       readTime,
     },
     content,
