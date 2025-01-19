@@ -11,7 +11,7 @@ const Footer = () => {
         >
           developd
         </Link>
-        &nbsp; &copy; 2023
+        &nbsp; &copy; 2025
       </p>
     </footer>
   );
