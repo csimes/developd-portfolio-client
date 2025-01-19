@@ -12,9 +12,9 @@ import { ExternalLink, GitHub } from "react-feather";
 const projectItems = {
   projects: [
     {
-      name: "Digital Office",
+      name: "WorkWise 1.0",
       summary:
-        "Digital Office was created to help users manage their time spent working. A user is able to register, login, create a profile, and do some simple time tracking, with the ability to view their entire history of timesheets and edit them as needed.",
+        "WorkWise 1.0 (formerly known as Digital Office) was created to help users manage their time spent working. A user is able to register, login, create a profile, and do some simple time tracking, with the ability to view their entire history of timesheets and edit them as needed.",
       tech: "PostgreSQL, Express, React, Node.js, Supabase, Render",
       image: "/assets/digital-office.png",
       url: "https://time-tracking-client.onrender.com/",
