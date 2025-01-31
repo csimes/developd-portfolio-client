@@ -37,18 +37,18 @@ function calculateReadTime(content: string): number {
 }
 
 function isValidHttpUrl(string: string) {
-  let url
+  let url;
   try {
     url = new URL(string);
   } catch (_) {
-    return false
+    return false;
   }
-  return url.protocol === "http:" || url.protocol === "https:"
+  return url.protocol === "http:" || url.protocol === "https:";
 }
 
 function getImagePath(image: string | undefined) {
-  if (!image) return "/default-blog-image.jpg";
-  return isValidHttpUrl(image) ? image : `/images/${image}`
+  if (!image) return "/public/assets/default-blog-image.jpg";
+  return isValidHttpUrl(image) ? image : `/images/${image}`;
 }
 
 export async function getPostMetadata(): Promise<PostMetadata[]> {
