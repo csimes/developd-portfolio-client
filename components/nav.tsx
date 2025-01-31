@@ -28,7 +28,7 @@ const Nav = () => {
   };
 
   const nav = (
-    <ul className="flex md:flex-row sm:flex-col md:space-x-4 text-center">
+    <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 text-center">
       {navItems.items.map((item, id) => (
         <li key={id}>
           <a
