@@ -47,8 +47,8 @@ function isValidHttpUrl(string: string) {
 }
 
 function getImagePath(image: string | undefined) {
-  if (!image) return "/public/assets/default-blog-image.jpg";
-  return isValidHttpUrl(image) ? image : `/images/${image}`;
+  if (!image) return "/assets/default-blog-image.jpg";
+  return isValidHttpUrl(image) ? image : `/assets/${image}`;
 }
 
 export async function getPostMetadata(): Promise<PostMetadata[]> {

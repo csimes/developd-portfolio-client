@@ -21,8 +21,8 @@ keywords:
     "JavaScript",
     "frontend development",
     "backend development",
-    image: "https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4",
   ]
+image: "https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4"
 ---
 
 ## Introduction
